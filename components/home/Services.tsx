@@ -1,42 +1,160 @@
 'use client'
 
+/* ── Service 1 icon — AI Strategy & Consulting (#FB6A15) ── */
+const IconStrategy = () => (
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#f1)"><rect x="2" y="2" width="40" height="40" rx="8" fill="#FB6A15" fillOpacity="0.1" shapeRendering="crispEdges"/></g>
+    <g clipPath="url(#c1)">
+      <path d="M10.6012 11.7003C10.5865 11.1119 11.1156 10.5851 11.7035 10.6003C18.5687 10.5994 25.4344 10.5994 32.2996 10.6003C32.8884 10.5856 33.4138 11.1147 33.3995 11.7026C33.4005 16.3609 33.4005 21.0188 33.3991 25.6771C33.4124 26.2489 32.9151 26.7706 32.3418 26.778C31.1522 26.784 29.9621 26.778 28.7725 26.7803C29.0887 27.097 29.405 27.4137 29.7217 27.73C29.8049 27.6518 29.8835 27.5553 29.9998 27.5282C30.135 27.4896 30.2798 27.5443 30.3731 27.6449C31.1012 28.3721 31.8279 29.1007 32.5565 29.8279C32.7321 30.0067 32.9219 30.175 33.0631 30.3841C33.3844 30.8488 33.4837 31.4584 33.3251 32.0003C33.1628 32.5827 32.7087 33.0737 32.14 33.2787C31.451 33.5425 30.6236 33.3577 30.1078 32.8314C29.2726 31.9953 28.4328 31.1637 27.6035 30.323C27.4302 30.1322 27.5475 29.8555 27.7313 29.7213C27.4142 29.4023 27.0947 29.0846 26.7766 28.7661C25.6633 29.4712 24.3219 29.8086 23.0077 29.702C22.6561 29.6794 22.3109 29.6068 21.9666 29.5365C21.4711 30.0421 20.9654 30.5381 20.4671 31.041C20.1638 31.1913 19.6728 31.1964 19.1814 31.1913 18.6905 31.1931C18.6864 31.5935 18.6988 31.9944 18.6845 32.3943C18.6496 32.9289 18.1711 33.3867 17.6351 33.3968C16.24 33.4032 14.8444 33.3977 13.4493 33.3996C12.7575 33.3168 12.0657 32.7344 12.0717 32.2964C12.0721 31.2993 12.068 30.3018 12.074 29.3048C12.0836 28.7509 12.5737 28.2618 13.128 28.2535C14.6146 28.2485 16.1012 28.2522 17.5878 28.2517C18.1426 28.2388 18.6524 28.7068 18.685 29.2611C18.6983 29.6597 18.6864 30.0587 18.6905 30.4577C19.1313 30.4567 19.5722 30.4595 20.013 30.4563C20.3986 30.061 20.7976 29.679 21.1782 29.2791C19.9449 28.795 18.879 27.9033 18.1761 26.7808C16.1104 26.7798 14.0441 26.7803 11.9784 26.7803C11.2861 26.6975 10.5943 26.1147 10.6007 25.6757C10.5998 21.0174 10.5998 16.3586 10.6012 11.7003Z" fill="#FB6B15"/>
+      <path d="M15.0134 13.5413H18.6908V14.2767H15.0134V13.5413Z" fill="#FB6B15"/>
+      <path d="M15.0134 15.012H18.6908V15.7474H15.0134V15.012Z" fill="#FB6B15"/>
+    </g>
+    <defs>
+      <filter id="f1" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset/><feGaussianBlur stdDeviation="1"/><feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0.984314 0 0 0 0 0.415686 0 0 0 0 0.0823529 0 0 0 1 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_44_1463"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_44_1463" result="shape"/>
+      </filter>
+      <clipPath id="c1"><rect x="10" y="10" width="24" height="24" rx="4" fill="white"/></clipPath>
+    </defs>
+  </svg>
+)
+
+/* ── Service 2 icon — Custom AI Development (#02D6E4) ── */
+const IconCustomDev = () => (
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#f2)"><rect x="2" y="2" width="40" height="40" rx="8" fill="#02D6E4" fillOpacity="0.1" shapeRendering="crispEdges"/></g>
+    <path d="M14.3589 11.9764C15.0505 11.4232 15.9544 11.1353 16.8386 11.2122C18.1115 11.3055 19.277 12.1738 19.7467 13.3581C23.7327 13.3581 27.7187 13.3571 31.7047 13.3585C31.9912 13.3576 32.2767 13.472 32.4783 13.6759C32.747 13.9389 32.8707 14.352 32.7573 14.7149C32.6762 15.0051 32.4666 15.2456 32.205 15.3895C32.2031 18.7023 32.2045 22.015 32.204 25.3278C32.2017 25.6082 32.227 25.8993 32.1211 26.1656C31.9424 26.6649 31.437 27.0212 30.9063 27.0207C28.978 27.0254 27.0492 27.0212 25.1205 27.0226C25.12 27.6832 25.1205 28.3433 25.12 29.0039C26.0038 29.3255 26.8866 29.6485 27.7689 29.972C27.8889 30.0128 28.0024 30.0906 28.053 30.2107C28.158 30.4291 28.0371 30.7245 27.8041 30.7986C27.6339 30.8609 27.4651 30.77 27.3071 30.7151C26.4318 30.3973 25.5579 30.0761 24.6817 29.7611C23.7356 30.1038 22.7899 30.4484 21.8424 30.7869C21.5813 30.8919 21.2362 30.6818 21.2573 30.3893C21.2597 30.1844 21.4214 30.0152 21.6141 29.9655C22.4946 29.6467 23.3755 29.3279 24.2541 29.0039C24.2536 28.3433 24.2545 27.6832 24.2536 27.0231C23.2531 27.0226 22.2531 27.0221 21.2526 27.0231C20.8621 26.1543 21.1556 26.1656 24.4074 26.159 27.6592 26.1665 30.911 26.1618C31.3859 25.9143 31.362 25.6578 31.3583 22.2771 31.3667 18.8964 31.3578 15.5156C27.5453 15.5203 23.7323 15.5161 19.9197 15.5175C19.7627 16.1959 19.4068 16.8284 18.8935 17.3005C18.3131 17.8424 17.5414 18.1748 16.7481 18.2198C15.9459 18.2747 15.1292 18.0389 14.478 17.5677C13.7729 17.0637 13.2656 16.2915 13.0879 15.443C12.8029 14.1687 13.3373 12.7762 14.3589 11.9764Z" fill="#02D6E4"/>
+    <path d="M27.5867 17.2314C28.2103 17.2155 28.8347 17.2291 29.4587 17.2244C29.6744 17.2089 29.884 17.374 29.9145 17.5891C29.9613 17.8339 29.749 18.0824 29.5009 18.0786C28.891 18.0838 28.2815 18.0805 27.6716 18.08C27.4732 18.0903 27.2806 17.9525 27.2318 17.7598C27.1634 17.524 27.3462 17.2614 27.5867 17.2314Z" fill="#02D6E4"/>
+    <path d="M27.5539 19.7833C28.1873 19.7552 28.8235 19.7796 29.4579 19.7711C29.6684 19.7552 29.8737 19.9108 29.9117 20.1195C29.9698 20.3665 29.757 20.6286 29.5043 20.6263C28.8934 20.63 28.2825 20.6272 27.6716 20.6277C27.4681 20.6394 27.2717 20.4922 27.2281 20.2925C27.1732 20.0712 27.3341 19.8316 27.5539 19.7833Z" fill="#02D6E4"/>
+    <path d="M24.1703 23.332C24.2401 23.3048 24.3161 23.3044 24.3901 23.3025C26.0793 23.3039 27.7685 23.3016 29.4573 23.3039C29.6893 23.2931 29.897 23.5017 29.8909 23.7329C29.8961 23.9626 29.6879 24.1694 29.4573 24.1586C27.7526 24.16 26.0479 24.1595 24.3433 24.1586C24.1398 24.1708 23.9424 24.0245 23.8988 23.8252C23.8482 23.6222 23.9762 23.4014 24.1703 23.332Z" fill="#02D6E4"/>
+    <defs>
+      <filter id="f2" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset/><feGaussianBlur stdDeviation="1"/><feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0.00784314 0 0 0 0 0.839216 0 0 0 0 0.894118 0 0 0 1 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_44_1478"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_44_1478" result="shape"/>
+      </filter>
+    </defs>
+  </svg>
+)
+
+/* ── Service 3 icon — Machine Learning (#F800FF) ── */
+const IconML = () => (
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#f3)"><rect x="2" y="2" width="40" height="40" rx="8" fill="#F800FF" fillOpacity="0.1" shapeRendering="crispEdges"/></g>
+    <path d="M16.0469 12.2019C16.288 11.6198 16.8891 11.2064 17.5209 11.2033C20.9135 11.2001 24.3061 11.2042 27.6987 11.201C27.8574 11.2028 28.0456 11.1761 28.1636 11.3096C29.6675 12.8066 31.165 14.31 32.6684 15.808C32.7561 15.8862 32.8072 15.9984 32.7982 16.1173C32.7986 20.988 32.7982 25.8591 32.7982 30.7298C32.7991 31.0803 32.8213 31.4448 32.6783 31.7741C32.4848 32.2599 32.0451 32.6393 31.5345 32.7542C31.3007 32.8107 31.0583 32.7958 30.8199 32.7976C26.5227 32.7972 22.2256 32.7972 17.9284 32.7972C17.6548 32.7954 17.3748 32.8157 17.1093 32.7352C16.4277 32.552 15.9135 31.8876 15.918 31.1798C15.9148 29.2124 15.9176 27.2449 15.9166 25.2775C14.9908 25.2766 14.065 25.2784 13.1392 25.2766C12.5494 25.2788 11.9709 24.9907 11.6113 24.5249C11.3418 24.1825 11.1984 23.7474 11.202 23.3128C11.2011 21.2318 11.2007 19.1504 11.202 17.069C11.193 16.3982 11.6453 15.7582 12.2753 15.5334C12.5349 15.4312 12.8171 15.4281 13.0917 15.4321C14.0333 15.433 14.975 15.4326 15.9166 15.4326C15.9162 14.6207 15.9176 13.8093 15.9162 12.9979C15.9103 12.7275 15.9356 12.4511 16.0469 12.2019Z" fill="#F800FF"/>
+    <path d="M15.1526 18.2966C15.1798 17.5951 15.8238 16.9944 16.5249 17.0139C17.2209 16.9994 17.8564 17.5946 17.8871 18.2898C17.8994 18.999 17.8903 19.7091 17.8921 20.4182C17.9052 20.5838 17.7854 20.7475 17.6189 20.771C17.4335 20.8081 17.239 20.6521 17.2417 20.4617C17.2318 20.1166 17.2417 19.771 17.2381 19.4255C16.7596 19.425 16.2811 19.4255 15.8026 19.4255C15.7985 19.7724 15.8098 20.1197 15.7985 20.4666C15.7989 20.6625 15.5904 20.8167 15.4027 20.7674C15.2435 20.7353 15.1359 20.5756 15.1486 20.416C15.1504 19.7095 15.1422 19.003 15.1526 18.2966Z" fill="#F800FF"/>
+    <path d="M18.8918 17.0401C19.0958 16.9406 19.3595 17.1125 19.3482 17.34C19.3532 18.3657 19.35 19.3915 19.3495 20.4178C19.3676 20.6064 19.2044 20.7864 19.013 20.7746C18.8303 20.7751 18.6802 20.6009 18.6964 20.4205C18.6946 19.4096 18.696 18.3983 18.696 17.3874C18.6847 17.2454 18.7557 17.0953 18.8918 17.0401Z" fill="#F800FF"/>
+    <path d="M25.0438 17.6292C25.1112 17.5998 25.1858 17.6025 25.2582 17.5994C26.7657 17.6025 28.2736 17.598 29.7815 17.6016C29.962 17.5894 30.128 17.7473 30.1221 17.9286C30.1257 18.11 29.9593 18.2647 29.7792 18.2534C28.2713 18.2574 26.7634 18.2529 25.255 18.2556C25.1334 18.2592 24.9972 18.2348 24.9217 18.129C24.7887 17.973 24.8543 17.7066 25.0438 17.6292Z" fill="#F800FF"/>
+    <path d="M25.0971 20.1335C25.2246 20.1122 25.3549 20.1226 25.4838 20.1212C26.9153 20.1231 28.3472 20.1199 29.7787 20.1226C29.9641 20.1104 30.1355 20.2759 30.1215 20.4632C30.1184 20.6369 29.9582 20.7829 29.7855 20.7743C28.2599 20.7775 26.7334 20.7757 25.2079 20.7753C25.0573 20.7861 24.9053 20.6902 24.8646 20.5428C24.8085 20.3723 24.9211 20.1701 25.0971 20.1335Z" fill="#F800FF"/>
+    <defs>
+      <filter id="f3" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset/><feGaussianBlur stdDeviation="1"/><feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0.972549 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_44_1492"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_44_1492" result="shape"/>
+      </filter>
+    </defs>
+  </svg>
+)
+
+/* ── Service 4 icon — Natural Language Processing (#9003FF) ── */
+const IconNLP = () => (
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#f4)"><rect x="2" y="2" width="40" height="40" rx="8" fill="#9003FF" fillOpacity="0.1" shapeRendering="crispEdges"/></g>
+    <path d="M12.6107 11.2H31.3871C31.8039 11.216 32.2148 11.4075 32.4751 11.7366C32.6785 11.9817 32.7835 12.296 32.8 12.612V31.3867C32.7839 31.7938 32.6025 32.1946 32.287 32.4557C32.038 32.6709 31.714 32.7835 31.3879 32.8H12.6137C12.1968 32.7843 11.7859 32.5928 11.5252 32.2637C11.3215 32.0186 11.2164 31.7043 11.2 31.3884V12.612C11.2164 12.2956 11.3215 11.9813 11.5252 11.7362C11.7851 11.4075 12.1947 11.2168 12.6107 11.2Z" fill="#9003FF"/>
+    <path d="M20.7102 15.953C20.8005 15.8817 20.9203 15.8817 21.03 15.8796C21.6767 15.8809 22.323 15.8809 22.9698 15.8796C23.0866 15.8805 23.2161 15.8847 23.3081 15.9674C23.4102 16.0475 23.4427 16.1813 23.4393 16.3053C23.4406 16.7015 23.4389 17.0976 23.4397 17.4937C24.0557 17.6448 24.6446 17.8924 25.1897 18.216C25.4744 17.9291 25.7592 17.6422 26.0461 17.3579C26.1494 17.2495 26.3123 17.2005 26.4553 17.255C26.5764 17.306 26.6616 17.4115 26.7536 17.5009C27.1881 17.9375 27.6235 18.3725 28.0588 18.8079C28.2107 19.1277 28.1107 19.3673 28.0205 19.4571C27.7538 19.7195 27.4923 19.987 27.2248 20.2486C27.5446 20.7957 27.7964 21.383 27.9458 21.9998C28.3554 22.0023 28.7651 21.9968 29.1747 22.0019C29.5603 22.1479 29.5578 22.3841 29.5603 22.5056C29.5548 23.1806 29.5662 23.8556 29.5552 24.5302C29.3654 24.8922 29.1684 24.8795 28.7617 24.8833 28.3546 24.8803 27.9479 24.8799C27.7926 25.4942 27.5505 26.0848 27.2235 26.6282C27.5142 26.921 27.8095 27.2095 28.0977 27.5048C28.2478 27.8832 28.1061 28.0212 27.634 28.5047 27.1497 28.9767 26.6751 29.4577C26.341 29.6509 26.203 29.6602 26.0895 29.5699 25.9988 29.4767C25.7301 29.205 25.458 28.9367 25.1892 28.665C24.645 28.9902 24.0544 29.2337 23.4393 29.3877C23.4393 29.7796 23.4397 30.1719 23.4397 30.5643C23.417 30.8246 23.0908 31.0013 22.971 31.0013C22.3095 30.9996 21.6476 31.0013 20.9861 31.0005C20.5613 30.7701 20.5604 30.6394 20.5592 30.5221C20.5609 30.1441 20.5596 29.7657 20.5604 29.3872C19.9458 29.2332 19.3547 28.9907 18.8109 28.665C18.5181 28.9561 18.23 29.2518 17.9334 29.5391C17.5288 29.6758 17.3909 29.5214C16.9108 29.0455 16.4349 28.5646 15.9548 28.0879C15.7726 27.7394 15.7954 27.6162 15.9641 27.439C16.2358 27.1694 16.5054 26.8982 16.7762 26.6277C16.4488 26.0848 16.2075 25.4937 16.0514 24.8795C15.6574 24.882 15.263 24.8808 14.8689 24.8808C14.4432 24.6563 14.4403 24.5243 14.4395 24.4062C14.4416 23.7455 14.4395 23.0844 14.4403 22.4238C14.5732 22.0019 14.7972 22.0006 14.9145 21.9994C15.2946 22.0006 15.6743 22.0002 16.054 22.0002C16.2025 21.3817 16.4577 20.7957 16.7745 20.2465C16.5054 19.9862 16.2451 19.7179 15.9776 19.4559C15.7781 19.0032 15.854 18.8935 15.9401 18.8087C16.4105 18.3379 16.8813 17.8684 17.3504 17.3963C17.7896 17.2166 17.9056 17.3047 17.9954 17.3975C18.2663 17.6713 18.5397 17.9426 18.8109 18.216C19.3551 17.8916 19.9445 17.6452 20.56 17.4937C20.5609 17.0972 20.5592 16.7006 20.5604 16.304C20.5554 16.1724 20.5967 16.0302 20.7102 15.953Z" fill="#9003FF"/>
+    <defs>
+      <filter id="f4" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset/><feGaussianBlur stdDeviation="1"/><feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0.564706 0 0 0 0 0.0117647 0 0 0 0 1 0 0 0 1 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="e4"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="e4" result="shape"/>
+      </filter>
+    </defs>
+  </svg>
+)
+
+/* ── Service 5 icon — AI Analytics & Insights (#9003FF) ── */
+const IconAnalytics = () => (
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#f5)"><rect x="2" y="2" width="40" height="40" rx="8" fill="#9003FF" fillOpacity="0.1" shapeRendering="crispEdges"/></g>
+    <path d="M21.7604 18.771C22.5674 18.7267 23.3858 18.8996 24.1064 19.2658C25.548 19.9805 26.5583 21.4853 26.6626 23.0926C26.7292 23.9444 26.5541 24.8126 26.1626 25.572C25.7627 26.3542 25.1366 27.0207 24.3794 27.4662C23.0737 28.2526 21.3752 28.3302 20.0024 27.6683C19.2068 27.2971 18.5254 26.6896 18.0538 25.95C17.5311 25.132 17.2725 24.1486 17.3315 23.1796C17.3956 21.8291 18.0905 20.5272 19.1717 19.7168C19.9117 19.1481 20.8284 18.8144 21.7604 18.771ZM21.5992 19.5025C20.391 19.6189 19.2591 20.3277 18.6305 21.3655C18.147 22.1396 17.9538 23.0855 18.0812 23.9879C18.2023 24.8919 18.6541 25.7458 19.3287 26.3588C19.9754 26.9549 20.8263 27.3245 21.7043 27.3852C22.5058 27.4468 23.3259 27.2561 24.0161 26.8431C24.7974 26.3828 25.4104 25.6441 25.7184 24.7911C26.0445 23.9026 26.0352 22.8961 25.6922 22.0135C25.3851 21.2191 24.816 20.5281 24.0908 20.0809C23.3555 19.6172 22.4632 19.4164 21.5992 19.5025Z" fill="#9003FF"/>
+    <path d="M22.3861 21.5085C22.6093 21.5971 22.8316 21.6866 23.0548 21.776C22.5747 22.9758 22.0946 24.1752 21.6136 25.3746C21.3909 25.286 21.1686 25.1966 20.9458 25.108C21.4251 23.9077 21.9064 22.7084 22.3861 21.5085Z" fill="#9003FF"/>
+    <defs>
+      <filter id="f5" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset/><feGaussianBlur stdDeviation="1"/><feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0.564706 0 0 0 0 0.0117647 0 0 0 0 1 0 0 0 1 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="e5"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="e5" result="shape"/>
+      </filter>
+    </defs>
+  </svg>
+)
+
+/* ── Service 6 icon — AI Training & Support (#00D622) ── */
+const IconTraining = () => (
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#f6)"><rect x="2" y="2" width="40" height="40" rx="8" fill="#00D622" fillOpacity="0.1" shapeRendering="crispEdges"/></g>
+    <path d="M21.1993 11.2585C22.1119 11.1522 23.0387 11.1985 23.9458 11.3342C25.3013 11.5414 26.6321 12.0701 27.6657 12.9866C28.7392 13.9251 29.4441 15.2208 29.8481 16.5748C30.2984 18.0837 30.4805 19.6939 30.2012 21.2528C29.9063 23.0478 29.0616 24.6773 28.4513 26.3733C28.0505 27.4851 27.7772 28.6529 27.7538 29.8381C27.7258 30.6845 27.8285 31.5308 28.0046 32.3575C27.834 32.7958 27.5951 32.7958 27.2824 32.4882C27.0503 31.4249 26.9508 30.3268 27.0444 29.2407C27.1177 28.3104 27.3291 27.3948 27.6249 26.5108C27.973 25.459 28.4348 24.4503 28.8223 23.4132C29.235 22.344 29.5427 21.2216 29.5908 20.0713C29.6381 19.0346 29.478 17.9984 29.207 16.9998C28.8245 15.5899 28.0972 14.2223 26.9215 13.319C25.6489 12.3232 23.9989 11.9646 22.4123 11.9367C21.037 11.8871 19.6475 12.2466 18.4795 12.9765C17.2423 13.739 16.2531 14.8962 15.6964 16.2387C15.0686 17.7352 14.9925 19.4532 15.4791 21.0006C15.5194 21.1143 15.5387 21.2409 15.4859 21.3546C15.1301 22.2647 14.7696 23.1734 14.4156 24.084C14.3546 24.1972 14.4408 24.3536 14.5725 24.3531C14.9545 24.3751 15.3378 24.3747 15.7198 24.3953C15.8821 24.399 16.0252 24.5283 16.0532 24.6874C16.2839 25.7268 16.5044 26.7689 16.7374 27.8079C16.8786 28.4058 17.494 28.8395 18.1053 28.7703C19.3889 28.6263 20.6706 28.4718 21.9542 28.3283C22.144 28.3159 22.2889 28.1774 22.4297 28.0646C22.8809 27.6575 23.1602 27.0968 23.3574 26.5305C23.5165 26.083 24.1315 26.277 24.0567 26.7556C23.7986 27.5021 23.406 28.2366 22.7736 28.7313C22.603 28.8592 22.4192 28.9802 22.2105 29.0344C21.8138 29.094 21.4121 29.1164 21.0168 29.1852C21.5589 30.0953 21.7854 31.2365 21.441 32.2585C21.3722 32.4336 21.336 32.6546 21.1572 32.7541C20.965 32.8687 20.6899 32.7555 20.6325 32.5405C20.5738 32.3438 20.7137 32.1672 20.7568 31.9825C21.0407 31.0568 20.7454 30.0499 20.2079 29.2755C19.5205 29.3402 18.8358 29.4346 18.1489 29.5038C17.5954 29.5534 17.0268 29.359 16.6191 28.9821C16.3068 28.6978 16.0922 28.3127 16.0055 27.9C15.8019 26.9725 15.6001 26.0441 15.3965 25.1161C15.1062 25.1023 14.8155 25.0996 14.5257 25.0831C14.1726 25.0643 13.8461 24.8222 13.7236 24.4916C13.6397 24.2761 13.6461 24.0308 13.7323 23.8171C14.0754 22.9373 14.4243 22.0597 14.7655 21.179C14.3184 19.7228 14.317 18.1341 14.7605 16.677C15.1874 15.2644 16.0344 13.9848 17.1602 13.032C18.2961 12.0646 19.7181 11.4383 21.1993 11.2585Z" fill="#00D622"/>
+    <path d="M19.9544 15.8374C19.6719 15.9217 19.4646 16.2019 19.4692 16.4972C19.4701 17.8878 19.4683 19.2779 19.4701 20.6685C19.4692 21.0326 19.8003 21.3517 20.164 21.3402C21.6938 21.3393 23.2236 21.3407 24.7529 21.3398C25.1083 21.3421 25.4266 21.0285 25.4284 20.6727C25.4316 19.2788 25.4303 17.8846 25.4293 16.4907C25.4335 16.1327 25.117 15.8099 24.758 15.8117C23.2117 15.8099 21.6653 15.8122 20.1195 15.8108C20.0631 15.8117 20.008 15.8209 19.9544 15.8374Z" fill="#00D622"/>
+    <defs>
+      <filter id="f6" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset/><feGaussianBlur stdDeviation="1"/><feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.839216 0 0 0 0 0.133333 0 0 0 1 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="e6"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="e6" result="shape"/>
+      </filter>
+    </defs>
+  </svg>
+)
+
+/* ── Service definitions ── */
 const services = [
   {
-    icon: 'ai-strategy',
-    color: '#FB6A15',
+    Icon: IconStrategy,
     title: 'AI Strategy & Consulting',
-    description: 'Transform your business with strategic AI planning, expert consulting, and comprehensive implementation roadmaps that drive sustainable digital transformation and competitive advantage.'
+    description: 'Transform your business with strategic AI planning, expert consulting, and comprehensive implementation roadmaps that drive sustainable digital transformation and competitive advantage.',
   },
   {
-    icon: 'custom-dev',
-    color: '#02D6E4',
+    Icon: IconCustomDev,
     title: 'Custom AI Development',
-    description: 'Build tailored AI solutions that precisely meet your unique business requirements, leveraging cutting-edge technology to create intelligent systems that drive innovation and growth.'
+    description: 'Build tailored AI solutions that precisely meet your unique business requirements, leveraging cutting-edge technology to create intelligent systems that drive innovation and growth.',
   },
   {
-    icon: 'ml-solutions',
-    color: '#F800FF',
+    Icon: IconML,
     title: 'Machine Learning Solutions',
-    description: 'Develop and deploy advanced machine learning models that automate processes, predict outcomes, and deliver intelligent insights to optimize your business operations and decision-making.'
+    description: 'Develop and deploy advanced machine learning models that automate processes, predict outcomes, and deliver intelligent insights to optimize your business operations and decision-making.',
   },
   {
-    icon: 'nlp',
-    color: '#9003FF',
+    Icon: IconNLP,
     title: 'Natural Language Processing',
-    description: 'Harness the power of language understanding with NLP solutions that enable intelligent chatbots, sentiment analysis, content generation, and automated text processing capabilities.'
+    description: 'Harness the power of language understanding with NLP solutions that enable intelligent chatbots, sentiment analysis, content generation, and automated text processing capabilities.',
   },
   {
-    icon: 'analytics',
-    color: '#9003FF',
+    Icon: IconAnalytics,
     title: 'AI Analytics & Insights',
-    description: 'Unlock the power of your data with advanced AI analytics that provide actionable insights, predictive intelligence, and strategic recommendations for informed decision-making.'
+    description: 'Unlock the power of your data with advanced AI analytics that provide actionable insights, predictive intelligence, and strategic recommendations for informed decision-making.',
   },
   {
-    icon: 'training',
-    color: '#00D622',
+    Icon: IconTraining,
     title: 'AI Training & Support',
-    description: 'Empower your team with comprehensive AI training programs and ongoing technical support to ensure successful adoption, skill development, and maximum value from AI investments.'
-  }
+    description: 'Empower your team with comprehensive AI training programs and ongoing technical support to ensure successful adoption, skill development, and maximum value from AI investments.',
+  },
 ]
 
 export default function Services() {
@@ -55,19 +173,15 @@ export default function Services() {
           </div>
         </div>
         <div className="row pt-60 gy-4">
-          {services.map((service, index) => (
-            <div key={index} className="col-lg-4 col-md-6">
+          {services.map(({ Icon, title, description }, i) => (
+            <div key={i} className="col-lg-4 col-md-6">
               <div className="service-box-wrap">
                 <div className="service-box position-relative overflow-hidden">
                   <h3>
-                    <span className="service-icon" style={{ color: service.color }}>
-                      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                        <rect x="2" y="2" width="40" height="40" rx="8" fill={service.color} fillOpacity="0.1" />
-                      </svg>
-                    </span>
-                    {service.title}
+                    <Icon />
+                    {title}
                   </h3>
-                  <p>{service.description}</p>
+                  <p>{description}</p>
                 </div>
               </div>
             </div>

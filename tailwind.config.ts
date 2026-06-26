@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+// Tailwind v4 — corePlugins/preflight is controlled via globals.css,
+// NOT via this config file (corePlugins was removed in v4).
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,9 +17,6 @@ const config: Config = {
     },
   },
   plugins: [],
-  corePlugins: {
-    preflight: false, // Disable Tailwind's base/reset styles to prevent conflicts with original CSS
-  },
 };
 
 export default config;

@@ -13,21 +13,25 @@ const products = [
   {
     image: '/assets/images/new-images-v2/resources/resources-1.png',
     title: 'Magicalswap',
+    slug: 'magicalswap',
     description: 'Artificial Intelligence (AI) has transcended the realm of possibility, becoming a transformative force that...',
   },
   {
     image: '/assets/images/new-images-v2/resources/resources-2.png',
     title: 'Whereareyou',
+    slug: 'whereareyou',
     description: 'Contrary to popular belief, AI is not just algorithms and data; it\'s also a strategic tool for unleashing...',
   },
   {
     image: '/assets/images/new-images-v2/resources/resources-3.png',
     title: 'Lifenotes',
+    slug: 'lifenotes',
     description: 'Explore the strategic approaches where AI is leveraged for business success. From optimizing operations...',
   },
   {
     image: '/assets/images/new-images-v2/resources/resources-4.png',
-    title: '',
+    title: 'NetAssist',
+    slug: 'netassist',
     description: 'Artificial Intelligence (AI) has transcended the realm of possibility, becoming a transformative force that...',
   },
 ]
@@ -67,7 +71,7 @@ export default function ProductsWeServe() {
   }, [])
 
   return (
-    <section className="blog-area bg_color_black pb-120 section-padding-top">
+    <section id="products-section" className="blog-area bg_color_black pb-120 section-padding-top">
       <div className="container">
         <div className="row align-items-center gy-4">
 
@@ -117,11 +121,11 @@ export default function ProductsWeServe() {
                       <div className="blog-info">
                         {product.title && (
                           <h2 className="text_color_white">
-                            <Link href="/blog">{product.title}</Link>
+                            <Link href={`/products/${product.slug}`}>{product.title}</Link>
                           </h2>
                         )}
                         <p className="text_color_light_white">{product.description}</p>
-                        <Link className="border-btn border-btn-white" href="/blog">
+                        <Link className="border-btn border-btn-white" href={`/products/${product.slug}`}>
                           Read More <ArrowIcon />
                         </Link>
                       </div>

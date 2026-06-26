@@ -106,11 +106,11 @@ export default function Header() {
                     {/* About — no dropdown */}
                     <li><Link href="/about">About</Link></li>
 
-                    {/* Services — no dropdown */}
-                    <li><Link href="/service">Services</Link></li>
+                    {/* Services — scrolls to Industries We Serve on homepage, standalone page otherwise */}
+                    <li><Link href="/#industries-section">Services</Link></li>
 
-                    {/* Products — simple dropdown */}
-                    <li><Link href="/products">Products</Link></li>
+                    {/* Products — scrolls to Products We Serve on homepage, standalone page otherwise */}
+                    <li><Link href="/#products-section">Products</Link></li>
                     {/* <li className="has-child-menu">
                       <a href="javascript:void(0)">Products</a>
                       <ul>
