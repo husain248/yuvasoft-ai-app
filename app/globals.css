@@ -1,0 +1,108 @@
+/*
+ * globals.css — Tailwind v4
+ *
+ * We deliberately skip @tailwind base / preflight so that
+ * Tailwind's CSS reset does NOT override the original template styles.
+ * Only utility classes are pulled in.
+ */
+@layer utilities;
+/* empty layer declaration so Tailwind v4 still works */
+
+/* ──────────────────────────────────────────────────────────────────
+   Preloader
+   ────────────────────────────────────────────────────────────────── */
+.preloader {
+  transition: opacity 0.6s ease;
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   Footer subscribe input + button
+   Problem: .common-btn has no position set, so "right" had no effect.
+   Fix: make the wrapper relative and the button absolute.
+   ────────────────────────────────────────────────────────────────── */
+.footer-subscribe {
+  position: relative !important;
+}
+
+.footer-subscribe input {
+  width: 100%;
+}
+
+.footer-subscribe .common-btn {
+  position: absolute !important;
+  right: 4px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  height: 87% !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   Subscribe section CTA
+   Same positional fix for the homepage subscribe form button.
+   ────────────────────────────────────────────────────────────────── */
+.subscribe-form {
+  position: relative !important;
+}
+
+.subscribe-form input {
+  width: 100%;
+  padding-right: 160px;
+}
+
+.subscribe-form .common-btn {
+  position: absolute !important;
+  right: 4px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  height: 87% !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   Achievement area
+   The background-image URL in the ::before pseudo-element uses a
+   relative path that breaks in Next.js — override with absolute path.
+   ────────────────────────────────────────────────────────────────── */
+.achievement-line-wrap .achievement-single-line-wrap:not(:last-child)::before {
+  background-image: url('/assets/images/new-images-v2/shapes/count.png') !important;
+}
+
+.achievement-line-wrap.achievement-line-wrap-white .achievement-single-line-wrap:not(:last-child)::before {
+  background-image: url('/assets/images/new-images-v2/shapes/count-white.png') !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   Testimonial-3 Slider (Swiper)
+   The structural CSS must be in place *before* Swiper JS runs so
+   it measures widths correctly and renders 2.8 cards per view.
+   ────────────────────────────────────────────────────────────────── */
+.testimonial-3__slider.swiper {
+  overflow: hidden !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+.testimonial-3__slider .swiper-wrapper {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  transition-property: transform !important;
+  box-sizing: content-box !important;
+}
+
+.testimonial-3__slider .swiper-slide {
+  flex-shrink: 0 !important;
+  height: auto !important;
+  /* width is computed by Swiper JS — never hardcode it */
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   Subscribe-wrap background
+   CSS url() paths inside node_modules / public need to be absolute.
+   ────────────────────────────────────────────────────────────────── */
+.subscribe-wrap.subscribe-wrap-two {
+  background-image: url('/assets/images/new-images-v2/subscribe-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
