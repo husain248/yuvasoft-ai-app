@@ -82,8 +82,8 @@ export default function ContactPage() {
                       <div className="input-group">
                         <label>Message</label>
                         <textarea
-                          cols="30"
-                          rows="4"
+                          cols={30}
+                          rows={4}
                           placeholder="write your message"
                         ></textarea>
                       </div>
