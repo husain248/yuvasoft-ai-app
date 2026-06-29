@@ -98,7 +98,7 @@ export default async function ProductDetailPage({ params }: Props) {
                   <h3 className="dev-skills-title text_color_white">Features</h3>
                   <div className="dev-overview-data mt-2">
                     {product.features.map((f, i) => (
-                      <p key={i} className="text_color_light_white">
+                      <p key={i} className="text_color_light_white mb-1">
                         <CheckIcon /> {f}
                       </p>
                     ))}
@@ -144,14 +144,14 @@ export default async function ProductDetailPage({ params }: Props) {
             {/* Right: screenshot card */}
             <div className="col-lg-4 order-1 order-lg-2">
               {/* Accent bar */}
-              <div style={{
+              {/* <div style={{
                 height: '4px',
                 background: product.color,
                 borderRadius: '4px 4px 0 0',
-              }}/>
+              }}/> */}
               <div className="team-box-wrap">
-                <div className="team-box">
-                  <div className="team-img team-single-img overflow-hidden position-relative text-center">
+                <div className="team-box overflow-hidden">
+                  <div className="team-img pt-0 team-single-img overflow-hidden position-relative text-center">
                     <img className="w-100" src={product.screenshot} alt={product.name}/>
                   </div>
                 </div>

@@ -11,19 +11,13 @@ export default function About() {
             <div className="about-wrap bg_color_white d-flex flex-column flex-lg-row justify-content-between">
               <div className="section-title">
                 <span className="sub-title d-inline-block">Who We Are</span>
-                <h2 className="title"><span>About</span> SaasLyn</h2>
+                <h2 className="title"><span>About</span> Yovasoft</h2>
               </div>
               <div className="about-info">
-                <p className="disc">
-                  At SaasLyn, we are a premier AI agency on a mission to
-                  revolutionize businesses and unlock new possibilities
-                  through intelligent solutions.
-                </p>
                 <p className="disc-2">
-                  With our team of AI specialists and creative strategists, we
-                  deliver cutting-edge artificial intelligence services that
-                  drive growth and transform your digital presence.
+                  Yuvasoft Solutions Pvt Ltd is a global, software development company, dedicated to building innovative app solutions for Mobile and Web. We are a In-house team that cares deeply about creating great apps for our customers. Yuvasoft Solutions Pvt Ltd was established in January 2011 as a Web Project and Programme Development Company however due to the changing built environment and the growing needs of our Clients; it became necessary to broaden the services that could be provided by Yuvasoft, so as to offer multi-disciplinary under one banner, we now provide services in Project Management & Analysis, Project Architecture, Mobile Apps Development, Designs, Quality Assurance.
                 </p>
+                
                 <Link className="border-btn" href="/about">
                   Learn More
                   <svg

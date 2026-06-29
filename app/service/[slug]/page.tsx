@@ -78,8 +78,8 @@ export default async function ServiceDetailPage({ params }: Props) {
                   <h5 className="team-dev-title text_color_light_white">{service.subtitle}</h5>
                   <p className="team-dev-desc text_color_light_white">{service.description}</p>
 
-                  <h3 className="dev-skills-title text_color_white mt-3">Key Features</h3>
-                  <div className="dev-overview-data mt-2">
+                  <h3 className="dev-skills-title text_color_white mt-5">Key Features</h3>
+                  <div className="dev-overview-data">
                     {service.features.slice(0, 2).map((f, i) => (
                       <p key={i} className="text_color_light_white">
                         <CheckIcon />{f.label}
@@ -188,7 +188,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       {/* ── Other services ── */}
       {others.length > 0 && (
-        <section className="service-area bg_color_black pt-120 pb-120 position-relative z-index-one overflow-hidden">
+        <section className="service-area bg_color_black pt-0 pb-120 position-relative z-index-one overflow-hidden">
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-8">

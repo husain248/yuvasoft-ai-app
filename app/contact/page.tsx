@@ -30,212 +30,191 @@ export default function ContactPage() {
       </section>
 
       {/* ── Contact main ── */}
-      <section className="contact-area bg_color_black pt-120 pb-120">
+      <section className="contact-area bg_color_deep_blue pt-120 pb-0">
         <div className="container">
-          <div className="row gy-5 justify-content-between">
-
-            {/* ── Left info cards ── */}
-            <div className="col-lg-4">
-              <div className="section-title mb-4">
-                <span className="sub-title d-inline-block">Contact Us</span>
-                <h2 className="title text_color_white">Let&apos;s Build Something Intelligent Together</h2>
-                <p className="desc text_color_light_white mt-3">
-                  Whether you have a clear brief or just an idea, we&apos;d love to hear from you. Our team typically responds within 4 business hours.
+          <div className="row justify-content-center">
+            <div className="col-lg-8">
+              <div className="section-title gradient-sub-title text-center">
+                <h2 className="title text_color_white">
+                  Our team is ready to help you
+                </h2>
+                <p className="desc text_color_light_white">
+                  Our dedicated team is prepared and eager to provide you with
+                  the assistance you need, ensuring your success and
+                  satisfaction. Feel free to reach out anytime for our support.
                 </p>
               </div>
-
-              {/* Info items */}
-              {[
-                {
-                  icon: (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
-                    </svg>
-                  ),
-                  label: 'Office Address',
-                  value: '42 Innovation Hub, Tech Park, Pune, Maharashtra 411014',
-                },
-                {
-                  icon: (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/>
-                    </svg>
-                  ),
-                  label: 'Phone',
-                  value: '+91 98765 43210',
-                },
-                {
-                  icon: (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
-                    </svg>
-                  ),
-                  label: 'Email',
-                  value: 'hello@yuvasoft.ai',
-                },
-                {
-                  icon: (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 2c1.71 0 3.31.47 4.68 1.28L4.28 16.68A8.99 8.99 0 0 1 3 12c0-4.97 4.03-9 9-9zm0 18c-1.71 0-3.31-.47-4.68-1.28l12.4-12.4A8.99 8.99 0 0 1 21 12c0 4.97-4.03 9-9 9z" fill="currentColor"/>
-                    </svg>
-                  ),
-                  label: 'Working Hours',
-                  value: 'Monday – Friday, 10am – 6pm IST',
-                },
-              ].map((item, i) => (
-                <div key={i} className="d-flex align-items-start gap-3 mb-4">
-                  <div style={{
-                    width: '48px', height: '48px', borderRadius: '12px',
-                    background: 'rgba(255,255,255,0.06)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    flexShrink: 0, color: 'rgba(255,255,255,0.8)',
-                  }}>
-                    {item.icon}
-                  </div>
-                  <div>
-                    <p className="text_color_light_white mb-1" style={{ fontSize: '13px' }}>{item.label}</p>
-                    <p className="text_color_white mb-0" style={{ fontSize: '15px' }}>{item.value}</p>
-                  </div>
-                </div>
-              ))}
-
-              {/* Social links */}
-              <div className="mt-4">
-                <p className="text_color_light_white mb-2" style={{ fontSize: '13px' }}>Follow Us</p>
-                <ul className="custom-ul social-list social-list-two d-flex align-items-center flex-wrap">
-                  {(['Facebook', 'LinkedIn', 'Instagram', 'X']).map((s) => (
-                    <li key={s}><a href="#" aria-label={s}>
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <circle cx="10" cy="10" r="9" stroke="white" strokeOpacity="0.3" strokeWidth="1"/>
-                        <text x="10" y="14" textAnchor="middle" fill="white" fontSize="9" fontFamily="sans-serif">
-                          {s[0]}
-                        </text>
-                      </svg>
-                    </a></li>
-                  ))}
-                </ul>
-              </div>
             </div>
-
-            {/* ── Right: form ── */}
-            <div className="col-lg-7">
-              <div className="about-wrap bg_color_light_black p-5" style={{ borderRadius: '24px' }}>
-                <h3 className="text_color_white mb-1">Send Us a Message</h3>
-                <p className="text_color_light_white mb-4">Fill in the form and we&apos;ll be in touch within 24 hours.</p>
-
-                <form onSubmit={(e) => e.preventDefault()}>
+          </div>
+          
+          <div className="row justify-content-between gy-4 pt-60">
+            <div className="col-lg-7 col-md-12">
+              <div className="form-wrap form-wrap-contact w-100">
+                <form className="common-form-box">
+                  <h3 className="form-title text_color_white">Get In touch</h3>
+                  <p className="form-info text_color_light_white">
+                    Our team would love to hear from you. Write your message to
+                    us!
+                  </p>
                   <div className="row gy-4">
-                    <div className="col-md-6">
-                      <label className="text_color_light_white mb-2" style={{ fontSize: '14px' }}>First Name *</label>
-                      <input
-                        type="text"
-                        placeholder="John"
-                        required
-                        style={{
-                          width: '100%', background: 'rgba(255,255,255,0.05)',
-                          border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px',
-                          padding: '14px 18px', color: '#fff', fontSize: '15px', outline: 'none',
-                        }}
-                      />
+                    <div className="col-lg-6">
+                      <div className="input-group">
+                        <label>First Name</label>
+                        <input
+                          type="text"
+                          placeholder="write your first name"
+                        />
+                      </div>
                     </div>
-                    <div className="col-md-6">
-                      <label className="text_color_light_white mb-2" style={{ fontSize: '14px' }}>Last Name *</label>
-                      <input
-                        type="text"
-                        placeholder="Doe"
-                        required
-                        style={{
-                          width: '100%', background: 'rgba(255,255,255,0.05)',
-                          border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px',
-                          padding: '14px 18px', color: '#fff', fontSize: '15px', outline: 'none',
-                        }}
-                      />
+                    <div className="col-lg-6">
+                      <div className="input-group">
+                        <label>First Name</label>
+                        <input type="text" placeholder="write your last name" />
+                      </div>
                     </div>
-                    <div className="col-md-6">
-                      <label className="text_color_light_white mb-2" style={{ fontSize: '14px' }}>Email Address *</label>
-                      <input
-                        type="email"
-                        placeholder="john@company.com"
-                        required
-                        style={{
-                          width: '100%', background: 'rgba(255,255,255,0.05)',
-                          border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px',
-                          padding: '14px 18px', color: '#fff', fontSize: '15px', outline: 'none',
-                        }}
-                      />
+                    <div className="col-lg-12">
+                      <div className="input-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="write your email" />
+                      </div>
                     </div>
-                    <div className="col-md-6">
-                      <label className="text_color_light_white mb-2" style={{ fontSize: '14px' }}>Phone Number</label>
-                      <input
-                        type="tel"
-                        placeholder="+91 98765 43210"
-                        style={{
-                          width: '100%', background: 'rgba(255,255,255,0.05)',
-                          border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px',
-                          padding: '14px 18px', color: '#fff', fontSize: '15px', outline: 'none',
-                        }}
-                      />
+                    <div className="col-lg-12">
+                      <div className="input-group">
+                        <label>Message</label>
+                        <textarea
+                          cols="30"
+                          rows="4"
+                          placeholder="write your message"
+                        ></textarea>
+                      </div>
                     </div>
-                    <div className="col-12">
-                      <label className="text_color_light_white mb-2" style={{ fontSize: '14px' }}>Company / Organisation</label>
-                      <input
-                        type="text"
-                        placeholder="Acme Corp"
-                        style={{
-                          width: '100%', background: 'rgba(255,255,255,0.05)',
-                          border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px',
-                          padding: '14px 18px', color: '#fff', fontSize: '15px', outline: 'none',
-                        }}
-                      />
-                    </div>
-                    <div className="col-12">
-                      <label className="text_color_light_white mb-2" style={{ fontSize: '14px' }}>What are you interested in?</label>
-                      <select
-                        style={{
-                          width: '100%', background: '#1a1f2e',
-                          border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px',
-                          padding: '14px 18px', color: 'rgba(255,255,255,0.7)', fontSize: '15px', outline: 'none',
-                        }}
-                      >
-                        <option value="">Select a service...</option>
-                        <option>AI Strategy &amp; Consulting</option>
-                        <option>Custom AI Development</option>
-                        <option>Machine Learning Solutions</option>
-                        <option>Natural Language Processing</option>
-                        <option>AI Analytics &amp; Insights</option>
-                        <option>AI Training &amp; Support</option>
-                        <option>Product Inquiry</option>
-                        <option>General Enquiry</option>
-                      </select>
-                    </div>
-                    <div className="col-12">
-                      <label className="text_color_light_white mb-2" style={{ fontSize: '14px' }}>Your Message *</label>
-                      <textarea
-                        rows={5}
-                        placeholder="Tell us about your project, challenge, or idea..."
-                        required
-                        style={{
-                          width: '100%', background: 'rgba(255,255,255,0.05)',
-                          border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px',
-                          padding: '14px 18px', color: '#fff', fontSize: '15px',
-                          outline: 'none', resize: 'vertical',
-                        }}
-                      />
-                    </div>
-                    <div className="col-12">
-                      <button
-                        type="submit"
-                        className="common-btn bg-white-style w-100 justify-content-center"
-                        style={{ border: 'none', cursor: 'pointer' }}
-                      >
-                        Send Message
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                          <path d="M21.7061 12.7083L14.707 19.7073C14.512 19.9023 14.256 20.0003 14 20.0003C13.744 20.0003 13.488 19.9023 13.293 19.7073C12.902 19.3163 12.902 18.6842 13.293 18.2933L18.5859 13.0003H3C2.447 13.0003 2 12.5523 2 12.0003C2 11.4483 2.447 11.0003 3 11.0003H18.5859L13.293 5.70731C12.902 5.31631 12.902 4.68425 13.293 4.29325C13.684 3.90225 14.316 3.90225 14.707 4.29325L21.7061 11.2923Z" fill="currentColor"/>
-                        </svg>
-                      </button>
+                    <div className="col-lg-12 pt-3">
+                      <div className="form-info-wrap">
+                        <button
+                          type="submit"
+                          className="common-btn bg-blue-style w-100 d-flex justify-content-center"
+                        >
+                          Submit Now
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </form>
+              </div>
+            </div>
+            <div className="col-lg-5 col-md-12">
+              <div className="contact-hero h-100 overflow-hidden"></div>
+            </div>
+          </div>
+          <div className="row gy-4 pt-120">
+            <div className="col-lg-6 col-md-6 col-sm-12">
+              <div className='d-flex align-items-start flex-wrap'>
+                <div className="contact-card-box text-center flex-fill">
+                  <div className="contact-card-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.0013 3.33398C9.75197 3.33398 4.66797 8.41798 4.66797 14.6673C4.66797 21.3113 10.84 25.3886 14.924 28.0859L15.6306 28.5553C15.7426 28.63 15.872 28.6673 16 28.6673C16.128 28.6673 16.2573 28.63 16.3693 28.5553L17.076 28.0859C21.16 25.3886 27.332 21.3113 27.332 14.6673C27.3346 8.41798 22.2506 3.33398 16.0013 3.33398ZM16.0013 18.0007C14.16 18.0007 12.668 16.5087 12.668 14.6673C12.668 12.826 14.16 11.334 16.0013 11.334C17.8426 11.334 19.3346 12.826 19.3346 14.6673C19.3346 16.5087 17.8426 18.0007 16.0013 18.0007Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <div className="contact-card-text">
+                    <h3 className="contact-card-title text_color_white">
+                      India Address
+                    </h3>
+                    <p className="contact-card-desc text_color_light_white">
+                      715-7th Floor, Pukhraj Corporate,Navlakha Square, Indore(MP)-452001, INDIA.
+                    </p>
+                  </div>
+                </div>
+                <div className="contact-card-box text-center flex-fill">
+                  <div className="contact-card-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.0013 3.33398C9.75197 3.33398 4.66797 8.41798 4.66797 14.6673C4.66797 21.3113 10.84 25.3886 14.924 28.0859L15.6306 28.5553C15.7426 28.63 15.872 28.6673 16 28.6673C16.128 28.6673 16.2573 28.63 16.3693 28.5553L17.076 28.0859C21.16 25.3886 27.332 21.3113 27.332 14.6673C27.3346 8.41798 22.2506 3.33398 16.0013 3.33398ZM16.0013 18.0007C14.16 18.0007 12.668 16.5087 12.668 14.6673C12.668 12.826 14.16 11.334 16.0013 11.334C17.8426 11.334 19.3346 12.826 19.3346 14.6673C19.3346 16.5087 17.8426 18.0007 16.0013 18.0007Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <div className="contact-card-text">
+                    <h3 className="contact-card-title text_color_white">
+                      Canada Address
+                    </h3>
+                    <p className="contact-card-desc text_color_light_white">
+                      1469 Parkcrest Avenue Kamloops BC V2B 4W5, CANADA.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-6 col-sm-12">
+              <div className='d-flex align-items-start flex-wrap'>
+                <div className="contact-card-box text-center flex-fill">
+                  <div className="contact-card-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                    >
+                      <path
+                        d="M23.5002 18.8977L27.0243 20.999C27.7523 21.4337 28.1281 22.279 27.9615 23.111C27.2801 26.523 23.8536 28.7097 20.4976 27.7884C12.5789 25.615 6.39345 19.4484 4.21211 11.5124C3.28945 8.15502 5.47359 4.72566 8.88692 4.04299L8.90938 4.03901C9.74271 3.87234 10.5923 4.24967 11.0256 4.98167L13.1096 8.50035C13.8509 9.75235 13.4827 11.3643 12.2707 12.1697L10.0562 13.643C11.6189 17.3857 14.6054 20.3844 18.3374 21.9444L19.8241 19.7243C20.6361 18.515 22.2495 18.1524 23.5002 18.8977Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <div className="contact-card-text">
+                    <h3 className="contact-card-title text_color_white">
+                      Contact Info
+                    </h3>
+                    <p className="contact-card-desc text_color_light_white">
+                      <a href="tel:999 3351929"> +91 (0) 999 3351929</a><br />
+                      <a href="tel:+1 (250) 320-2415"> +1 (250) 320-2415</a>
+                    </p>
+                  </div>
+                </div>
+                <div className="contact-card-box text-center flex-fill">
+                  <div className="contact-card-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                    >
+                      <path
+                        d="M24 6.66602H8C5.33333 6.66602 4 7.99935 4 10.666V22.666C4 25.3327 5.33333 26.666 8 26.666H24C26.6667 26.666 28 25.3327 28 22.666V10.666C28 7.99935 26.6667 6.66602 24 6.66602ZM23.9212 12.8074L17.3721 17.57C16.9614 17.8687 16.48 18.018 16 18.018C15.52 18.018 15.0373 17.8687 14.6279 17.5714L8.07878 12.8074C7.63211 12.4834 7.53339 11.8567 7.85872 11.41C8.18272 10.9647 8.80519 10.8634 9.25586 11.19L15.8053 15.9527C15.9227 16.0367 16.0786 16.038 16.196 15.9527L22.7454 11.19C23.1948 10.8634 23.8186 10.9647 24.1426 11.41C24.4679 11.858 24.3679 12.4834 23.9212 12.8074Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <div className="contact-card-text">
+                    <h3 className="contact-card-title text_color_white">
+                      Live Support
+                    </h3>
+                    <p className="contact-card-desc text_color_light_white">
+                      <a href="mailto:info@yuvasoftech.com"
+                        > info@yuvasoftech.com</a>
+                        <br/>
+                        <a href="mailto:hr@yuvasoftech.com"
+                        > hr@yuvasoftech.com</a>
+                      
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -264,7 +243,7 @@ export default function ContactPage() {
                 <div className="service-box-wrap h-100">
                   <div className="service-box position-relative overflow-hidden h-100">
                     <span style={{
-                      fontSize: '48px', fontWeight: 700, color: 'rgba(255,255,255,0.08)',
+                      fontSize: '48px', fontWeight: 700, color: '#ffffff',
                       display: 'block', marginBottom: '8px', lineHeight: 1,
                     }}>{step.num}</span>
                     <h3 style={{ fontSize: '18px' }}>{step.title}</h3>
