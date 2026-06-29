@@ -204,7 +204,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     <div className="service-box position-relative overflow-hidden h-100 d-flex flex-column">
                       <h3>{s.title}</h3>
                       <p className="flex-grow-1">{s.description}</p>
-                      <Link className="border-btn mt-3" href={`/service/${s.slug}`}>
+                      <Link className="border-btn border-btn-white mt-3" href={`/service/${s.slug}`}>
                         Learn More <ArrowSvg />
                       </Link>
                     </div>

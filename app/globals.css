@@ -9,6 +9,67 @@
 /* empty layer declaration so Tailwind v4 still works */
 
 /* ──────────────────────────────────────────────────────────────────
+   Color utility overrides
+   The template's heading rule (h1–h6 { color: #031811 }) and any
+   Bootstrap utility class with the same specificity can win over
+   .text_color_white/.text_color_light_white in source order.
+   Adding !important here ensures they always apply as intended.
+   ────────────────────────────────────────────────────────────────── */
+.text_color_white,
+.text_color_white h1,
+.text_color_white h2,
+.text_color_white h3,
+.text_color_white h4,
+.text_color_white h5,
+.text_color_white h6 {
+  color: #ffffff !important;
+}
+
+.text_color_light_white,
+.text_color_light_white h1,
+.text_color_light_white h2,
+.text_color_light_white h3,
+.text_color_light_white h4,
+.text_color_light_white h5,
+.text_color_light_white h6 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Stand-alone headings that carry text_color_white directly */
+h1.text_color_white,
+h2.text_color_white,
+h3.text_color_white,
+h4.text_color_white,
+h5.text_color_white,
+h6.text_color_white {
+  color: #ffffff !important;
+}
+
+h1.text_color_light_white,
+h2.text_color_light_white,
+h3.text_color_light_white,
+h4.text_color_light_white,
+h5.text_color_light_white,
+h6.text_color_light_white {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Paragraphs and spans that explicitly need white text */
+p.text_color_white,
+span.text_color_white,
+a.text_color_white,
+li.text_color_white {
+  color: #ffffff !important;
+}
+
+p.text_color_light_white,
+span.text_color_light_white,
+a.text_color_light_white,
+li.text_color_light_white {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────
    Preloader
    ────────────────────────────────────────────────────────────────── */
 .preloader {
