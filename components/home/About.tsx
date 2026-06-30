@@ -11,13 +11,13 @@ export default function About() {
             <div className="about-wrap bg_color_white d-flex flex-column flex-lg-row justify-content-between">
               <div className="section-title">
                 <span className="sub-title d-inline-block">Who We Are</span>
-                <h2 className="title"><span>About</span> Yovasoft</h2>
+                <h2 className="title"><span>About</span> Yuvasoft</h2>
               </div>
               <div className="about-info">
                 <p className="disc-2">
-                  Yuvasoft Solutions Pvt Ltd is a global, software development company, dedicated to building innovative app solutions for Mobile and Web. We are a In-house team that cares deeply about creating great apps for our customers. Yuvasoft Solutions Pvt Ltd was established in January 2011 as a Web Project and Programme Development Company however due to the changing built environment and the growing needs of our Clients; it became necessary to broaden the services that could be provided by Yuvasoft, so as to offer multi-disciplinary under one banner, we now provide services in Project Management & Analysis, Project Architecture, Mobile Apps Development, Designs, Quality Assurance.
+                  Yuvasoft Solutions Pvt Ltd is a global software development company dedicated to building innovative web and mobile applications for businesses worldwide. Founded in January 2011 as a web project and programme development company, we've grown into a multi-disciplinary in-house team offering software architecture, mobile app development, UI/UX design, and quality assurance — now enhanced with AI capabilities like intelligent automation, custom AI agents, and machine learning integrations for clients who want their software to do more.
                 </p>
-                
+
                 <Link className="border-btn" href="/about">
                   Learn More
                   <svg

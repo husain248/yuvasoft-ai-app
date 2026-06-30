@@ -105,6 +105,48 @@ export default async function ProductDetailPage({ params }: Props) {
                   </div>
                 </div>
 
+                {/* Magicalswap-only: Owner & Tenant Benefits */}
+                {slug === 'magicalswap' && (
+                  <div className="row mt-5 gy-4">
+                    <div className="col-md-6">
+                      <div className="bg_color_light_black p-4" style={{ borderRadius: '16px', height: '100%' }}>
+                        <h4 className="text_color_white mb-3" style={{ fontSize: '20px' }}>
+                          🏠 Owner Benefits
+                        </h4>
+                        {[
+                          '0% Brokerage',
+                          'Verified Tenants',
+                          'Free Marketing',
+                          'On-Time Rent',
+                          'Legal Agreements',
+                        ].map((item, i) => (
+                          <p key={i} className="text_color_light_white d-flex align-items-center mb-2">
+                            <CheckIcon /> <span>{item}</span>
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="bg_color_light_black p-4" style={{ borderRadius: '16px', height: '100%' }}>
+                        <h4 className="text_color_white mb-3" style={{ fontSize: '20px' }}>
+                          🔑 Tenant Benefits
+                        </h4>
+                        {[
+                          '9% Brokerage',
+                          '15 Days Notice',
+                          'Pre-Screened Properties',
+                          'Quick and Easy Move-In',
+                          '24/7 Support',
+                        ].map((item, i) => (
+                          <p key={i} className="text_color_light_white d-flex align-items-center mb-2">
+                            <CheckIcon /> <span>{item}</span>
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Tech stack */}
                 <div className="team-dev-skills mt-4">
                   <h3 className="dev-skills-title text_color_white">Built With</h3>

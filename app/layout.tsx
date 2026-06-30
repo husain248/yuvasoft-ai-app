@@ -8,8 +8,8 @@ import CustomCursor from '@/components/common/CustomCursor'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'SaasLyn - AI-Powered Digital Solutions',
-  description: 'Build Smarter. Scale Faster. With AI-Powered Digital Solutions',
+  title: 'Yuvasoft - Software Development & AI Solutions',
+  description: 'Custom software, web, and mobile development backed by 15 years of engineering experience — enhanced with AI to help your business move faster.',
   icons: {
     icon: '/assets/images/favicon.png',
   },
@@ -41,18 +41,18 @@ export default function RootLayout({
         </div>
 
         {/* ── JS ── exact same order as index-4.html ──────────────── */}
-        <Script src="/assets/js/new-js-v2/jquery-3.7.1.min.js"            strategy="beforeInteractive" />
-        <Script src="/assets/js/new-js-v2/bootstrap.bundle.min.js"        strategy="beforeInteractive" />
-        <Script src="/assets/js/new-js-v2/jquery.mixitup.min.js"          strategy="beforeInteractive" />
-        <Script src="/assets/js/new-js-v2/swiper-bundle.min.js"           strategy="beforeInteractive" />
-        <Script src="/assets/js/new-js-v2/jquery.magnific-popup.min.js"   strategy="beforeInteractive" />
-        <Script src="/assets/js/new-js-v2/odometer.min.js"                strategy="beforeInteractive" />
-        <Script src="/assets/js/new-js-v2/viewport.jquery.js"             strategy="beforeInteractive" />
-        <Script src="/assets/js/new-js-v2/jquery.meanmenu.min.js"         strategy="beforeInteractive" />
-        <Script src="/assets/js/new-js-v2/YouTubePopUp.js"                strategy="beforeInteractive" />
-        <Script src="/assets/js/new-js-v2/select2.js"                     strategy="beforeInteractive" />
-        <Script src="/assets/js/new-js-v2/gsap.min.js"                    strategy="beforeInteractive" />
-        <Script src="/assets/js/new-js-v2/main.js"                        strategy="afterInteractive" />
+        <Script src="/assets/js/new-js-v2/jquery-3.7.1.min.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/new-js-v2/bootstrap.bundle.min.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/new-js-v2/jquery.mixitup.min.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/new-js-v2/swiper-bundle.min.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/new-js-v2/jquery.magnific-popup.min.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/new-js-v2/odometer.min.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/new-js-v2/viewport.jquery.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/new-js-v2/jquery.meanmenu.min.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/new-js-v2/YouTubePopUp.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/new-js-v2/select2.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/new-js-v2/gsap.min.js" strategy="beforeInteractive" />
+        <Script src="/assets/js/new-js-v2/main.js" strategy="afterInteractive" />
 
         {/* ── Preloader fix (jQuery's fadeOut in main.js handles it,
                but as a fallback we also force-hide after 2 s) ─────── */}

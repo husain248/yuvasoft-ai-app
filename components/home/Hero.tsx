@@ -1,8 +1,65 @@
 'use client'
 
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+
+const rotatingServices = [
+  'Web Development',
+  'Mobile App Development',
+  'UI/UX Design',
+  'Technology Solutions',
+  'AI & Automation',
+]
+
+const rotatingTitleWords = [
+  'Scale',
+  'Automate',
+  'Transform',
+  'Accelerate',
+  'Future-Proof',
+]
+
+function useTypewriter(words: string[], typingSpeed = 80, deletingSpeed = 40, pause = 1400) {
+  const [index, setIndex] = useState(0)
+  const [subIndex, setSubIndex] = useState(0)
+  const [deleting, setDeleting] = useState(false)
+
+  useEffect(() => {
+    if (!deleting && subIndex === words[index].length) {
+      const t = setTimeout(() => setDeleting(true), pause)
+      return () => clearTimeout(t)
+    }
+    if (deleting && subIndex === 0) {
+      setDeleting(false)
+      setIndex((prev) => (prev + 1) % words.length)
+      return
+    }
+    const t = setTimeout(() => {
+      setSubIndex((prev) => prev + (deleting ? -1 : 1))
+    }, deleting ? deletingSpeed : typingSpeed)
+    return () => clearTimeout(t)
+  }, [subIndex, deleting, index, words, typingSpeed, deletingSpeed, pause])
+
+  return words[index].substring(0, subIndex)
+}
+
+function useRotatingWord(words: string[], interval = 2800) {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length)
+    }, interval)
+    return () => clearInterval(t)
+  }, [words, interval])
+
+  return { word: words[index], index }
+}
 
 export default function Hero() {
+  const typed = useTypewriter(rotatingServices)
+  const { word: titleWord, index: titleIndex } = useRotatingWord(rotatingTitleWords)
+
   return (
     <div
       className="hero-area hero-area-canvas minus-margin overflow-hidden position-relative z-index-one"
@@ -10,13 +67,88 @@ export default function Hero() {
         backgroundImage: 'url(/assets/images/banner/banner-three-bg.png)',
       }}
     >
+      <style>{`
+        .hero-services-kicker {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 0.3px;
+          margin-bottom: 16px;
+          padding: 6px 16px;
+          border: 1px solid rgba(255,255,255,0.2);
+          border-radius: 999px;
+          background: rgba(255,255,255,0.05);
+        }
+        .hero-services-kicker .kicker-label {
+          opacity: 0.65;
+          font-weight: 400;
+        }
+        .hero-services-kicker .kicker-typed {
+          min-width: 1px;
+        }
+        .hero-services-kicker .kicker-cursor {
+          display: inline-block;
+          animation: hero-blink 1s step-end infinite;
+        }
+        @keyframes hero-blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+
+        /* Rotating title word */
+        .hero-rotate-wrapper {
+          display: inline-block;
+          position: relative;
+          // overflow: hidden;
+          vertical-align: bottom;
+          height: 1.15em;
+          min-width: 180px;
+        }
+        .hero-rotate-word {
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, #00C881, #02D6E4);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          animation: heroWordIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          white-space: nowrap;
+        }
+        @keyframes heroWordIn {
+          0% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      `}</style>
       <div className="container position-relative z-index-one">
         <div className="row justify-content-between align-items-center">
           <div className="col-lg-5 order-1 order-lg-0 mt-5 mt-lg-0">
             <div className="hero-info">
-              <h1 className="text_color_white">Build Smarter. Scale Faster. With AI-Powered Digital Solutions</h1>
+              <span className="hero-services-kicker text_color_white">
+                <span className="kicker-label">We build:</span>
+                <span className="kicker-typed">{typed}</span>
+                <span className="kicker-cursor">|</span>
+              </span>
+              <h1 className="text_color_white">
+                Software & AI Solutions That{' '}
+                <span className="hero-rotate-wrapper">
+                  <span className="hero-rotate-word" key={titleIndex}>
+                    {titleWord}
+                  </span>
+                </span>{' '}
+                <div>Your Business</div>
+              </h1>
               <p className="text_color_light_white hero-text">
-                We create intelligent websites and AI-driven automation systems that help your business grow faster, reduce manual work, and maximize efficiency.
+                We design and build custom web platforms, mobile apps, and enterprise software — and layer in AI where it actually moves the needle, so your business runs faster and smarter.
               </p>
               <div className="two-btn-wrap d-flex flex-wrap mt-lg-5 mt-4">
                 <Link className="common-btn bg-white-style" href="/contact">
@@ -78,3 +210,4 @@ export default function Hero() {
     </div>
   )
 }
+

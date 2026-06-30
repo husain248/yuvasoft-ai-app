@@ -1,21 +1,21 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { services, getService, type Service } from '@/lib/data'
+import { industries, getIndustry, type Industry } from '@/lib/industries'
 
 interface Props { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
-  return services.map((s) => ({ slug: s.slug }))
+  return industries.map((ind) => ({ slug: ind.slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const service = getService(slug)
-  if (!service) return {}
+  const industry = getIndustry(slug)
+  if (!industry) return {}
   return {
-    title: `${service.title} — Yuvasoft AI`,
-    description: service.description,
+    title: `${industry.title} — Yuvasoft AI`,
+    description: industry.breadcrumbDesc,
   }
 }
 
@@ -48,19 +48,15 @@ const ArrowSvg = () => (
 
 /* ── Page component ────────────────────────────────────────────────────────── */
 
-export default async function ServiceDetailPage({ params }: Props) {
+export default async function IndustryDetailPage({ params }: Props) {
   const { slug } = await params
-  const service = getService(slug)
+  const industry = getIndustry(slug)
 
-  // notFound() throws internally — TypeScript still sees `service` as
-  // `Service | undefined` below, so we add a type-safe guard.
-  if (!service) notFound()
+  if (!industry) notFound()
 
-  // From here TypeScript knows `service` is `Service` (non-null assertion not needed
-  // because notFound throws, but we alias to keep the linter happy).
-  const s: Service = service
+  const ind: Industry = industry
 
-  const others = services.filter((svc) => svc.slug !== slug).slice(0, 3)
+  const others = industries.filter((i) => i.slug !== slug)
 
   return (
     <main>
@@ -73,13 +69,13 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <p className="breadcrumb-nav text_color_white">
                   <Link href="/">Home</Link>
                   <i className="bi bi-slash-lg mx-1"></i>
-                  <Link href="/service">Services</Link>
+                  <Link href="/industries">Industries</Link>
                   <i className="bi bi-slash-lg mx-1"></i>
-                  <span className="text_color_light_white">{s.title}</span>
+                  <span className="text_color_light_white">{ind.title}</span>
                 </p>
-                <h1 className="text_color_white">{s.title}</h1>
+                <h1 className="text_color_white">{ind.title}</h1>
                 <p className="breadcrumb-desc text_color_light_white">
-                  {s.breadcrumbDesc}
+                  {ind.breadcrumbDesc}
                 </p>
               </div>
             </div>
@@ -107,18 +103,35 @@ export default async function ServiceDetailPage({ params }: Props) {
 
                 {/* Title + subtitle + description */}
                 <div className="team-dev-head">
-                  <h3 className="team-dev-name text_color_white">{s.title}</h3>
+                  <h3 className="team-dev-name text_color_white">{ind.title}</h3>
                   <h5 className="team-dev-title text_color_light_white" style={{ marginTop: '8px', marginBottom: '16px' }}>
-                    {s.subtitle}
+                    {ind.subtitle}
                   </h5>
-                  <p className="team-dev-desc text_color_light_white">{s.description}</p>
+                  <p className="team-dev-desc text_color_light_white">{ind.description}</p>
+                </div>
+
+                {/* Industry Challenges */}
+                <div className="team-dev-skills mt-5">
+                  <h3 className="dev-skills-title text_color_white">Industry Challenges</h3>
+                  <p className="dev-skills-desc text_color_light_white mb-3">
+                    Common pain points we help solve in this industry.
+                  </p>
+                  <div className="dev-skills-tags">
+                    <ul className="custom-ul tag-list d-flex flex-wrap align-items-center">
+                      {ind.challenges.map((challenge, i) => (
+                        <li key={i}>
+                          <a href="#">{challenge}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
                 {/* Key Features */}
                 <div className="team-dev-skills mt-5">
                   <h3 className="dev-skills-title text_color_white">Key Features</h3>
                   <div className="dev-overview-data mt-3">
-                    {s.features.map((f, i) => (
+                    {ind.features.map((f, i) => (
                       <p
                         key={i}
                         className="text_color_light_white d-flex align-items-start"
@@ -131,33 +144,28 @@ export default async function ServiceDetailPage({ params }: Props) {
                   </div>
                 </div>
 
-                {/* Key Benefits */}
+                {/* Solutions We Build */}
                 <div className="team-dev-skills mt-4">
-                  <h3 className="dev-skills-title text_color_white">Key Benefits</h3>
-                  <p className="dev-skills-desc text_color_light_white mb-3">
-                    What you gain when you work with us on {s.title.toLowerCase()}.
-                  </p>
-                  <div className="dev-skills-tags">
+                  <h3 className="dev-skills-title text_color_white">Solutions We Build</h3>
+                  <div className="dev-skills-tags mt-3">
                     <ul className="custom-ul tag-list d-flex flex-wrap align-items-center">
-                      {s.keyBenefits.map((benefit, i) => (
+                      {ind.solutions.map((solution, i) => (
                         <li key={i}>
-                          <a href="#">{benefit}</a>
+                          <a href="#">{solution}</a>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
 
-                {/* What's Included */}
+                {/* Technologies */}
                 <div className="team-dev-skills mt-4">
-                  <h3 className="dev-skills-title text_color_white">
-                    What&apos;s Included
-                  </h3>
+                  <h3 className="dev-skills-title text_color_white">Technologies</h3>
                   <div className="dev-skills-tags mt-3">
                     <ul className="custom-ul tag-list d-flex flex-wrap align-items-center">
-                      {s.tagsOne.map((tag, i) => (
+                      {ind.technologies.map((tech, i) => (
                         <li key={i}>
-                          <a href="#">{tag}</a>
+                          <a href="#">{tech}</a>
                         </li>
                       ))}
                     </ul>
@@ -169,8 +177,8 @@ export default async function ServiceDetailPage({ params }: Props) {
                   <Link className="common-btn bg-white-style" href="/contact">
                     Get a Free Consultation <ArrowSvg />
                   </Link>
-                  <Link className="common-btn border-style border-style-transparent" href="/service">
-                    All Services
+                  <Link className="common-btn border-style border-style-transparent" href="/industries">
+                    All Industries
                   </Link>
                 </div>
               </div>
@@ -183,8 +191,8 @@ export default async function ServiceDetailPage({ params }: Props) {
                   <div className="team-img team-single-img overflow-hidden position-relative text-center">
                     <img
                       className="w-100"
-                      src={s.image}
-                      alt={s.title}
+                      src={ind.image}
+                      alt={ind.title}
                       style={{ borderRadius: '16px' }}
                     />
                     <div className="team-info-wrap position-absolute bottom-0 start-0 h-100 w-100 d-flex align-items-end" />
@@ -199,9 +207,9 @@ export default async function ServiceDetailPage({ params }: Props) {
               >
                 <h5 className="text_color_white mb-3">Quick Overview</h5>
                 {[
-                  { label: 'Features', value: `${s.features.length} key capabilities` },
-                  { label: 'Benefits', value: `${s.keyBenefits.length} proven outcomes` },
-                  { label: 'Delivery steps', value: `${s.values.length} clear phases` },
+                  { label: 'Features', value: `${ind.features.length} key capabilities` },
+                  { label: 'Solutions', value: `${ind.solutions.length} software types` },
+                  { label: 'Technologies', value: `${ind.technologies.length} tools used` },
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -241,8 +249,8 @@ export default async function ServiceDetailPage({ params }: Props) {
                         <span className="text-uppercase text_color_white gradient-sub">
                           How We Deliver
                         </span>
-                        <h2 className="title text_color_white">{s.valuesTitle}</h2>
-                        <p className="desc text_color_light_white">{s.valuesDesc}</p>
+                        <h2 className="title text_color_white">{ind.valuesTitle}</h2>
+                        <p className="desc text_color_light_white">{ind.valuesDesc}</p>
                       </div>
                       <Link className="common-btn border-style mt-4" href="/contact">
                         Start Now <ArrowSvg />
@@ -253,7 +261,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                   {/* Right values grid */}
                   <div className="col-lg-7 col-xl-7">
                     <div className="values-box-wrap">
-                      {s.values.map((v, i) => (
+                      {ind.values.map((v, i) => (
                         <div key={i} className="single-values-box">
                           <div
                             className="values-icon d-flex justify-content-center align-items-center"
@@ -274,7 +282,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
       </div>
 
-      {/* ── Other services ──────────────────────────────────────────────────── */}
+      {/* ── Other Industries ──────────────────────────────────────────────────── */}
       {others.length > 0 && (
         <section className="service-area bg_color_black pt-120 pb-120 position-relative z-index-one overflow-hidden">
           <div className="container">
@@ -282,24 +290,24 @@ export default async function ServiceDetailPage({ params }: Props) {
               <div className="col-lg-8">
                 <div className="section-title text-center">
                   <span className="sub-title d-inline-block">Explore More</span>
-                  <h2 className="title text_color_white text-anime">Other Services</h2>
+                  <h2 className="title text_color_white text-anime">Other Industries</h2>
                 </div>
               </div>
             </div>
             <div className="row pt-60 gy-4">
-              {others.map((svc) => (
-                <div key={svc.slug} className="col-lg-4 col-md-6">
+              {others.map((other) => (
+                <div key={other.slug} className="col-lg-4 col-md-6">
                   <div className="service-box-wrap h-100">
                     <div className="service-box position-relative overflow-hidden h-100 d-flex flex-column">
                       <h3 style={{ fontSize: '18px', marginBottom: '12px' }}>
-                        {svc.title}
+                        {other.title}
                       </h3>
                       <p className="flex-grow-1" style={{ fontSize: '15px' }}>
-                        {svc.description}
+                        {other.description}
                       </p>
                       <Link
                         className="border-btn mt-3 d-inline-flex align-items-center gap-2"
-                        href={`/service/${svc.slug}`}
+                        href={`/industries/${other.slug}`}
                       >
                         Learn More <ArrowSvg />
                       </Link>
