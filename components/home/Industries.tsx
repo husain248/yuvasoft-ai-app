@@ -45,7 +45,7 @@ export default function Industries() {
         <div className="row justify-content-center">
           <div className="col-lg-8">
             <div className="section-title text-center">
-              <h2 className="title text_color_white d-inline-block text-anime">
+              <h2 className="title d-inline-block text-anime gradient-title">
                 Industries We Serve
               </h2>
               <p className="desc text_color_light_white">

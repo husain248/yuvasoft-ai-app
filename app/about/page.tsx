@@ -52,38 +52,22 @@ const values = [
   {
     title: 'Innovation',
     desc: 'We specialize in custom AI development to precisely meet and exceed the unique needs of your organization.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13.3482 0H13.8611C14.2834 0.0510937 14.7128 0.0553125 15.1295 0.148125C16.4579 0.374063 17.7231 0.93 18.8087 1.72547C20.7639 3.1425 22.0731 5.39859 22.3736 7.79062C22.6496 9.84234 22.1579 11.9845 21.0325 13.7208C20.5107 14.5341 19.8526 15.2592 19.0965 15.8606C18.6911 16.1925 18.2251 16.4503 17.8576 16.8281C17.5646 17.1122 17.3345 17.453 17.1334 17.8064H10.7954C10.5053 17.1422 10.082 16.5333 9.5373 16.0528C9.3048 15.8442 9.04418 15.6717 8.79152 15.4894C7.42324 14.5087 6.3723 13.0917 5.84215 11.4933C5.5323 10.5787 5.40058 9.60844 5.42402 8.64422C4.65058 8.62125 4.59668 10.3992 5.07527 11.527C5.07527 11.527 4.65058 8.62125 5.42402 8.64422C5.16621 8.63625 4.9084 8.62781 4.65058 8.62125C4.59668 10.3992 5.07527 11.527 5.84215 11.4933C6.69808 14.7248 8.59136 16.298 9.5373 16.0528Z" fill="currentColor"/>
-      </svg>
-    )
+    icon: '/assets/images/s7-icon.svg',
   },
   {
     title: 'Commitment',
     desc: 'We specialize in custom AI development to precisely meet and exceed the unique needs of your organization.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C6.486 2 2 6.486 2 12C2 17.514 6.486 22 12 22C17.514 22 22 17.514 22 12C22 6.486 17.516 2 12 2ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20ZM15 11H13V8C13 7.448 12.553 7 12 7C11.447 7 11 7.448 11 8V12C11 12.553 11.447 13 12 13H15C15.553 13 16 12.553 16 12C16 11.448 15.553 11 15 11Z" fill="currentColor"/>
-      </svg>
-    )
+    icon: '/assets/images/s8-icon.svg',
   },
   {
     title: 'Teamwork',
     desc: 'We specialize in custom AI development to precisely meet and exceed the unique needs of your organization.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11ZM9 13C6.33 13 1 14.34 1 17V19H17V17C17 14.34 11.67 13 9 13ZM16 11C17.66 11 19 9.66 19 8C19 6.34 17.66 5 16 5C15.48 5 14.99 5.13 14.56 5.35C15.13 6.15 15.46 7.04 15.46 8C15.46 8.96 15.13 9.85 14.56 10.65C14.99 10.87 15.48 11 16 11ZM16 13C15.33 13 14.72 13.13 14.15 13.32C15.16 14.06 15.89 15.03 15.89 17V19H23V17C23 14.34 18.67 13 16 13Z" fill="currentColor"/>
-      </svg>
-    )
+    icon: '/assets/images/s9-icon.svg',
   },
   {
     title: 'Growth',
     desc: 'We specialize in custom AI development to precisely meet and exceed the unique needs of your organization.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.5 18.5L9.5 12.5L13.5 16.5L22 6.92L20.59 5.51L13.5 13.5L9.5 9.5L2 17L3.5 18.5Z" fill="currentColor"/>
-      </svg>
-    )
+    icon: '/assets/images/s10-icon.svg',
   },
 ]
 
@@ -241,7 +225,7 @@ export default function AboutPage() {
                       {values.map((v, i) => (
                         <div key={i} className="single-values-box">
                           <div className="values-icon d-flex justify-content-center align-items-center">
-                            {v.icon}
+                            <img src={v.icon} alt={v.title} width={24} height={24} />
                           </div>
                           <h2 className="text_color_white h2">{v.title}</h2>
                           <p className="text_color_light_white">{v.desc}</p>
@@ -391,19 +375,17 @@ export default function AboutPage() {
                   src="/assets/images/new-images-v2/shapes/noise.png"
                   alt=""
                 />
-                {/* Decorative SVG arrows */}
-                <svg className="arrow-left-img position-absolute z-index-minus-one start-0"
-                  xmlns="http://www.w3.org/2000/svg" width="487" height="282" viewBox="0 0 487 282" fill="none">
-                  <path d="M-75.0925 0.559411C-52.8054 39.8517 -31.3707 61.2603 11.3733 76.1087C49.9737 89.5177 98.4011 87.9239 138.902 88.8366C189.046 89.9666 279.836 111.385 284.626 173.218C288.346 221.23 239.694 257.51 198.414 225.938C182.499 213.767 182.76 186.158 197.302 172.721C213.01 158.207 242.078 159.764 261.448 162.682C313.47 170.52 327.438 227.731 367.395 252.704C404.725 276.036 441.783 269.902 481.958 257.65C485.4 256.601 478.533 269.963 477.15 273.438C472.081 286.177 476.878 281.537 480.711 271.905C483.176 265.71 491.681 253.838 481.924 254.03C474.884 254.17 461.982 249.7 455.217 247.008"
-                    stroke="white" strokeOpacity="0.15" strokeLinecap="round"/>
-                </svg>
-                <svg className="arrow-right-img position-absolute z-index-minus-one end-0"
-                  width="517" height="195" viewBox="0 0 517 195" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.5 157C61.5 125.5 318.5 141.5 360.051 30.6766C362.168 20.542 365.235 4.6987 351.721 1.61396C331.419 -3.02024 306.932 17.8011 293.133 29.3808C268.503 50.0502 247.589 75.6353 231.63 103.564C221.681 120.975 206.183 149.763 211.545 170.853C264.5 265.5 547.766 34.1925 558.5 24.5015"
-                    stroke="white" strokeOpacity="0.15" strokeLinecap="round"/>
-                  <path d="M49.4261 161.822L1.5 159.502L34.0002 129.502"
-                    stroke="white" strokeOpacity="0.15" strokeLinecap="round"/>
-                </svg>
+                {/* Decorative arrows */}
+                <img
+                  className="arrow-left-img position-absolute z-index-minus-one start-0"
+                  src="/assets/images/new-images-v2/shapes/subscribe-arrow-left.png"
+                  alt=""
+                />
+                <img
+                  className="arrow-right-img position-absolute z-index-minus-one end-0"
+                  src="/assets/images/new-images-v2/shapes/subscribe-arrow-right.png"
+                  alt=""
+                />
               </div>
             </div>
           </div>

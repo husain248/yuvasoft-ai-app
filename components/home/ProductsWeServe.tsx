@@ -78,7 +78,7 @@ export default function ProductsWeServe() {
           {/* Heading */}
           <div className="col-lg-7">
             <div className="section-title">
-              <h2 className="title text_color_white text-anime">
+              <h2 className="title text-anime gradient-title">
                 Products We've Built
               </h2>
               <p className="desc text_color_light_white">

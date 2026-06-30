@@ -11,12 +11,12 @@ export default function Subscribe() {
             <div className="subscribe-wrap overflow-hidden position-relative z-index-one">
               <div className="section-title text-center">
                 <h2 className="title text_color_white text-anim">
-                  Start Your AI Journey with SaasLyn
+                  Start Your AI Journey with Yuvasoft
                 </h2>
                 <p className="desc text_color_light_white">
                   Embark on an AI transformation journey into the future of
                   intelligent business as you kickstart your exploration of
-                  SaasLyn, where limitless AI possibilities await at every
+                  Yuvasoft, where limitless AI possibilities await at every
                   click and command.
                 </p>
               </div>

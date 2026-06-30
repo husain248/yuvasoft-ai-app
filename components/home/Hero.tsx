@@ -3,23 +3,46 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-const rotatingServices = [
-  'Web Development',
-  'Mobile App Development',
-  'UI/UX Design',
-  'Technology Solutions',
-  'AI & Automation',
+const heroSlides = [
+  {
+    service: 'Web Applications',
+    titleWord: 'Scale',
+    description:
+      'We build fast, maintainable web apps using Next.js, React, and Ruby on Rails — from marketing sites to complex internal platforms engineered to grow with your business.',
+  },
+  {
+    service: 'Mobile Apps',
+    titleWord: 'Accelerate',
+    description:
+      'Native Android and React Native apps built for real-world performance — one codebase, both platforms, polished UX from day one.',
+  },
+  {
+    service: 'UI/UX Design',
+    titleWord: 'Transform',
+    description:
+      'Interfaces designed around how your users actually think — wireframes, prototypes, and responsive design that converts visitors into customers.',
+  },
+  {
+    service: 'Technology Solutions',
+    titleWord: 'Future-Proof',
+    description:
+      'End-to-end technology packages covering architecture, integrations, CMS builds, and infrastructure — one partner for your entire stack.',
+  },
+  {
+    service: 'AI & Automation',
+    titleWord: 'Automate',
+    description:
+      'AI agents, chatbots, and workflow automation layered into your existing software using LangChain and Gemini — no full rebuild required.',
+  },
+  {
+    service: 'Quality Assurance',
+    titleWord: 'Strengthen',
+    description:
+      'Rigorous manual and automated QA, performance testing, and ongoing support so bugs get caught before your users ever see them.',
+  },
 ]
 
-const rotatingTitleWords = [
-  'Scale',
-  'Automate',
-  'Transform',
-  'Accelerate',
-  'Future-Proof',
-]
-
-function useTypewriter(words: string[], typingSpeed = 80, deletingSpeed = 40, pause = 1400) {
+function useTypewriter(words: string[], typingSpeed = 80, deletingSpeed = 80, pause = 1400) {
   const [index, setIndex] = useState(0)
   const [subIndex, setSubIndex] = useState(0)
   const [deleting, setDeleting] = useState(false)
@@ -40,25 +63,13 @@ function useTypewriter(words: string[], typingSpeed = 80, deletingSpeed = 40, pa
     return () => clearTimeout(t)
   }, [subIndex, deleting, index, words, typingSpeed, deletingSpeed, pause])
 
-  return words[index].substring(0, subIndex)
-}
-
-function useRotatingWord(words: string[], interval = 2800) {
-  const [index, setIndex] = useState(0)
-
-  useEffect(() => {
-    const t = setInterval(() => {
-      setIndex((prev) => (prev + 1) % words.length)
-    }, interval)
-    return () => clearInterval(t)
-  }, [words, interval])
-
-  return { word: words[index], index }
+  return { typed: words[index].substring(0, subIndex), index }
 }
 
 export default function Hero() {
-  const typed = useTypewriter(rotatingServices)
-  const { word: titleWord, index: titleIndex } = useRotatingWord(rotatingTitleWords)
+  const serviceLabels = heroSlides.map((s) => s.service)
+  const { typed, index: slideIndex } = useTypewriter(serviceLabels)
+  const slide = heroSlides[slideIndex]
 
   return (
     <div
@@ -128,10 +139,19 @@ export default function Hero() {
             opacity: 1;
           }
         }
+
+        /* Fade transition for description */
+        .hero-text {
+          animation: heroDescIn 0.5s ease forwards;
+        }
+        @keyframes heroDescIn {
+          0% { opacity: 0; transform: translateY(6px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
       `}</style>
       <div className="container position-relative z-index-one">
         <div className="row justify-content-between align-items-center">
-          <div className="col-lg-5 order-1 order-lg-0 mt-5 mt-lg-0">
+          <div className="col-lg-6 order-1 order-lg-0 mt-5 mt-lg-0">
             <div className="hero-info">
               <span className="hero-services-kicker text_color_white">
                 <span className="kicker-label">We build:</span>
@@ -141,14 +161,14 @@ export default function Hero() {
               <h1 className="text_color_white">
                 Software & AI Solutions That{' '}
                 <span className="hero-rotate-wrapper">
-                  <span className="hero-rotate-word" key={titleIndex}>
-                    {titleWord}
+                  <span className="hero-rotate-word" key={slideIndex}>
+                    {slide.titleWord}
                   </span>
                 </span>{' '}
                 <div>Your Business</div>
               </h1>
-              <p className="text_color_light_white hero-text">
-                We design and build custom web platforms, mobile apps, and enterprise software — and layer in AI where it actually moves the needle, so your business runs faster and smarter.
+              <p className="text_color_light_white hero-text" key={slideIndex}>
+                {slide.description}
               </p>
               <div className="two-btn-wrap d-flex flex-wrap mt-lg-5 mt-4">
                 <Link className="common-btn bg-white-style" href="/contact">
@@ -187,7 +207,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <div className="col-lg-5 order-0 order-lg-1">
+          <div className="col-lg-4 order-0 order-lg-1">
             <div className="hero-img-wrap section-middle">
               <img src="/assets/images/new-images-v2/hero/hero-1.png" alt="Hero" />
             </div>
