@@ -6001,8 +6001,9 @@ body::-webkit-scrollbar-thumb {
   color: var(--color-white);
 }
 .contact-card-box .contact-card-text {
-  max-width: 280px;
+  max-width: 100%;
   margin: 0 auto;
+  width: 100%;
 }
 .contact-card-box .contact-card-text .contact-card-title {
   margin-bottom: 4px;

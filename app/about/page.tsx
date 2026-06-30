@@ -162,7 +162,7 @@ export default function AboutPage() {
           <div className="row align-items-center justify-content-between gy-4">
             <div className="col-xl-2 col-lg-2">
               <img
-                src="/assets/images/logo-icon.svg"
+                src="/assets/images/yuva-logo-icon.png"
                 alt="Yuvasoft"
                 className="img-fluid"
               />

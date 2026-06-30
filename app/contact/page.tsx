@@ -108,22 +108,25 @@ export default function ContactPage() {
           </div>
           <div className="row gy-4 pt-120">
             <div className="col-lg-6 col-md-6 col-sm-12">
-              <div className='d-flex align-items-start flex-wrap'>
-                <div className="contact-card-box text-center flex-fill">
-                  <div className="contact-card-icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                    >
-                      <path
-                        d="M16.0013 3.33398C9.75197 3.33398 4.66797 8.41798 4.66797 14.6673C4.66797 21.3113 10.84 25.3886 14.924 28.0859L15.6306 28.5553C15.7426 28.63 15.872 28.6673 16 28.6673C16.128 28.6673 16.2573 28.63 16.3693 28.5553L17.076 28.0859C21.16 25.3886 27.332 21.3113 27.332 14.6673C27.3346 8.41798 22.2506 3.33398 16.0013 3.33398ZM16.0013 18.0007C14.16 18.0007 12.668 16.5087 12.668 14.6673C12.668 12.826 14.16 11.334 16.0013 11.334C17.8426 11.334 19.3346 12.826 19.3346 14.6673C19.3346 16.5087 17.8426 18.0007 16.0013 18.0007Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
+              <div className='contact-card-box mb-10 align-items-start'>
+                <div className="contact-card-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <path
+                      d="M16.0013 3.33398C9.75197 3.33398 4.66797 8.41798 4.66797 14.6673C4.66797 21.3113 10.84 25.3886 14.924 28.0859L15.6306 28.5553C15.7426 28.63 15.872 28.6673 16 28.6673C16.128 28.6673 16.2573 28.63 16.3693 28.5553L17.076 28.0859C21.16 25.3886 27.332 21.3113 27.332 14.6673C27.3346 8.41798 22.2506 3.33398 16.0013 3.33398ZM16.0013 18.0007C14.16 18.0007 12.668 16.5087 12.668 14.6673C12.668 12.826 14.16 11.334 16.0013 11.334C17.8426 11.334 19.3346 12.826 19.3346 14.6673C19.3346 16.5087 17.8426 18.0007 16.0013 18.0007Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className='d-flex align-items-start'>
+                <div className="contact-card-box flex-fill">
+                  
                   <div className="contact-card-text">
                     <h3 className="contact-card-title text_color_white">
                       India Address
@@ -133,21 +136,7 @@ export default function ContactPage() {
                     </p>
                   </div>
                 </div>
-                <div className="contact-card-box text-center flex-fill">
-                  <div className="contact-card-icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                    >
-                      <path
-                        d="M16.0013 3.33398C9.75197 3.33398 4.66797 8.41798 4.66797 14.6673C4.66797 21.3113 10.84 25.3886 14.924 28.0859L15.6306 28.5553C15.7426 28.63 15.872 28.6673 16 28.6673C16.128 28.6673 16.2573 28.63 16.3693 28.5553L17.076 28.0859C21.16 25.3886 27.332 21.3113 27.332 14.6673C27.3346 8.41798 22.2506 3.33398 16.0013 3.33398ZM16.0013 18.0007C14.16 18.0007 12.668 16.5087 12.668 14.6673C12.668 12.826 14.16 11.334 16.0013 11.334C17.8426 11.334 19.3346 12.826 19.3346 14.6673C19.3346 16.5087 17.8426 18.0007 16.0013 18.0007Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
+                <div className="contact-card-box flex-fill">
                   <div className="contact-card-text">
                     <h3 className="contact-card-title text_color_white">
                       Canada Address
@@ -160,10 +149,9 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12">
-              <div className='d-flex align-items-start flex-wrap'>
-                <div className="contact-card-box text-center flex-fill">
-                  <div className="contact-card-icon">
-                    <svg
+              <div className='contact-card-box mb-10 align-items-start'>
+                <div className="contact-card-icon">
+                  <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="32"
                       height="32"
@@ -175,7 +163,11 @@ export default function ContactPage() {
                         fill="currentColor"
                       />
                     </svg>
-                  </div>
+                </div>
+              </div>
+              <div className='d-flex align-items-start flex-wrap'>
+                <div className="contact-card-box flex-fill">
+                  
                   <div className="contact-card-text">
                     <h3 className="contact-card-title text_color_white">
                       Contact Info
@@ -186,21 +178,8 @@ export default function ContactPage() {
                     </p>
                   </div>
                 </div>
-                <div className="contact-card-box text-center flex-fill">
-                  <div className="contact-card-icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                    >
-                      <path
-                        d="M24 6.66602H8C5.33333 6.66602 4 7.99935 4 10.666V22.666C4 25.3327 5.33333 26.666 8 26.666H24C26.6667 26.666 28 25.3327 28 22.666V10.666C28 7.99935 26.6667 6.66602 24 6.66602ZM23.9212 12.8074L17.3721 17.57C16.9614 17.8687 16.48 18.018 16 18.018C15.52 18.018 15.0373 17.8687 14.6279 17.5714L8.07878 12.8074C7.63211 12.4834 7.53339 11.8567 7.85872 11.41C8.18272 10.9647 8.80519 10.8634 9.25586 11.19L15.8053 15.9527C15.9227 16.0367 16.0786 16.038 16.196 15.9527L22.7454 11.19C23.1948 10.8634 23.8186 10.9647 24.1426 11.41C24.4679 11.858 24.3679 12.4834 23.9212 12.8074Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
+                <div className="contact-card-box flex-fill">
+                  
                   <div className="contact-card-text">
                     <h3 className="contact-card-title text_color_white">
                       Live Support

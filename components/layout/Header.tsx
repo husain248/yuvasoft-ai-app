@@ -19,18 +19,18 @@ export default function Header() {
                   </svg>
                   Working Hours:
                 </span>
-                &nbsp;Monday - Friday, 10am - 05pm
+                &nbsp;Monday - Friday, 10am - 07pm
               </p>
             </div>
 
             {/* Contact + social */}
             <div className="col-lg-7 d-none d-lg-block">
               <div className="header-top-contact d-flex align-items-center justify-content-lg-end">
-                <a className="text_color_white header-top-address header-top-item" href="mailto:saaslyn@test.com">
-                  saaslyn@test.com
+                <a className="text_color_white header-top-address header-top-item" href="mailto:info@yuvasoftech.com">
+                  info@yuvasoftech.com
                 </a>
                 <a className="text_color_white header-top-address header-top-item" href="tel:3929299999">
-                  +3929 299 999
+                  +91 (0) 999 3351929
                 </a>
                 <ul className="custom-ul social-list d-flex align-items-center flex-wrap header-top-item">
                   {/* Facebook */}
