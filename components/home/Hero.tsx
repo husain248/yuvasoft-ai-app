@@ -239,7 +239,7 @@ export default function Hero() {
         </div>
 
         {/* ── Bottom showcase thumbnail ── */}
-        <div className="container pt-120 position-relative z-index-one">
+        {/* <div className="container pt-120 position-relative z-index-one">
           <div className="row row-padding-top">
             <div className="col-12">
               <div className="banner-three__thumb scale">
@@ -251,7 +251,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       {/* <div className="container pt-120 position-relative z-index-one">
         <div className="row row-padding-top">
@@ -266,6 +266,6 @@ export default function Hero() {
           </div>
         </div>
       </div> */}
-    </div>
+    </>
   )
 }
