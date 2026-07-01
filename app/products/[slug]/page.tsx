@@ -66,7 +66,7 @@ export default async function ProductDetailPage({ params }: Props) {
       </section>
 
       {/* ── Hero product info ── */}
-      <section className="team-details-area bg_color_deep_blue pt-120 pb-120">
+      <section className="team-details-area bg_color_deep_blue pt-120 pb-0">
         <div className="container">
           <div className="row justify-content-between gy-5">
 
@@ -160,7 +160,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 </div>
 
                 {/* Use cases */}
-                <div className="team-dev-skills mt-4">
+                {/* <div className="team-dev-skills mt-4">
                   <h3 className="dev-skills-title text_color_white">Use Cases</h3>
                   <div className="dev-skills-tags">
                     <ul className="custom-ul tag-list d-flex flex-wrap align-items-center">
@@ -169,7 +169,7 @@ export default async function ProductDetailPage({ params }: Props) {
                       ))}
                     </ul>
                   </div>
-                </div>
+                </div> */}
 
                 {/* CTAs */}
                 <div className="team-dev-social mt-4">
