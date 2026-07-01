@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import StatsCounter from '@/components/common/StatsCounter'
 
 export const metadata: Metadata = {
   title: 'About Us — Yuvasoft AI',
@@ -171,24 +172,14 @@ export default function AboutPage() {
 
         {/* Stats counters */}
         <div className="container">
-          <div className="row achievement-line-wrap gy-4">
-            {[
-              { value: '120', suffix: '+', label: 'Active Clients' },
-              { value: '300', suffix: '+', label: 'Projects Completed' },
-              { value: '50', suffix: 'M+', label: 'API Requests / Month' },
-              { value: '97', suffix: '%', label: 'Client Satisfaction' },
-            ].map((stat, i) => (
-              <div key={i} className="col-lg-3 achievement-single-line-wrap">
-                <div className="achievement-count-box text-center">
-                  <h2 className="counter-item text_color_white">
-                    <span className="odometer d-inline-block" data-odometer-final={stat.value}>.</span>
-                    <em>{stat.suffix}</em>
-                  </h2>
-                  <p className="text_color_light_white">{stat.label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <StatsCounter
+            stats={[
+              { target: 120, suffix: '+',  label: 'Active Clients' },
+              { target: 300, suffix: '+',  label: 'Projects Completed' },
+              { target: 50,  suffix: 'M+', label: 'API Requests / Month' },
+              { target: 97,  suffix: '%',  label: 'Client Satisfaction' },
+            ]}
+          />
         </div>
       </section>
 

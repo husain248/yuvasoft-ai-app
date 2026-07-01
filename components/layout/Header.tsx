@@ -266,11 +266,7 @@ export default function Header() {
                 ))}
               </ul>
 
-              {/* Desktop CTA */}
-              <div className="nav-cta">
-                <Link className="common-btn bg-white-style" href="/sign-up">Sign Up</Link>
-                <Link className="common-btn border-style border-style-transparent" href="/sign-in">Login</Link>
-              </div>
+              
 
               {/* Hamburger */}
               <button
@@ -308,10 +304,7 @@ export default function Header() {
               ))}
             </ul>
 
-            <div className="drawer-footer">
-              <Link className="common-btn bg-white-style" href="/sign-up" onClick={close}>Sign Up</Link>
-              <Link className="common-btn border-style border-style-transparent" href="/sign-in" onClick={close}>Login</Link>
-            </div>
+           
           </div>
         </div>
 

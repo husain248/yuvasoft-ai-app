@@ -199,71 +199,152 @@ export default async function ProductDetailPage({ params }: Props) {
                 </div>
               </div>
 
-              {/* Quick stats card */}
-              {/* <div className="about-wrap bg_color_light_black p-4 mt-4" style={{ borderRadius: '16px' }}>
-                <h5 className="text_color_white mb-3">Quick Facts</h5>
-                <div className="d-flex justify-content-between mb-2">
-                  <span className="text_color_light_white">Category</span>
-                  <span className="text_color_white" style={{ fontSize: '14px' }}>{product.category.split('·')[0].trim()}</span>
+              {/* QR code — Magicalswap only */}
+              {slug === 'magicalswap' && (
+                <div className="about-wrap bg_color_light_black p-4 mt-4" style={{ borderRadius: '16px' }}>
+                  <h5 className="text_color_white mb-4 text-center">Download App</h5>
+                  <img
+                    src="/assets/images/Magical-qr.png"
+                    alt="Scan to download Magicalswap"
+                    className="w-100"
+                  />
                 </div>
-                <div className="d-flex justify-content-between mb-2">
-                  <span className="text_color_light_white">Features</span>
-                  <span className="text_color_white" style={{ fontSize: '14px' }}>{product.features.length}</span>
-                </div>
-                <div className="d-flex justify-content-between">
-                  <span className="text_color_light_white">Tech Stack</span>
-                  <span className="text_color_white" style={{ fontSize: '14px' }}>{product.techStack.length} tools</span>
-                </div>
-              </div> */}
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── How it works section ── */}
-      <div className="values-area bg_color_deep_blue pb-120">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="values-wrapper bg_color_light_black">
-                <div className="row gy-5 align-items-center">
-                  <div className="col-lg-5">
-                    <div className="values-heading">
-                      <div className="section-title">
-                        <span className="sub-title d-inline-block text_color_white">How It Works</span>
-                        <h2 className="title text_color_white">{product.name}</h2>
-                        <p className="desc text_color_light_white">{product.description}</p>
-                      </div>
-                      <Link className="common-btn border-style mt-4" href="/contact">
-                        Get Started <ArrowSvg />
-                      </Link>
+      {/* ── How it works — Magicalswap only ── */}
+      {slug === 'magicalswap' && (
+        <div className="bg_color_deep_blue pb-120 pt-120">
+          <div className="container">
+
+            <style>{`
+              .hiw-section-title {
+                font-size: clamp(28px, 4vw, 42px);
+                font-weight: 700;
+                color: #fff;
+                text-transform: uppercase;
+                line-height: 1.15;
+                margin-bottom: 40px;
+              }
+              .hiw-section-title span {
+                background: linear-gradient(270deg,#00C881,#02D6E4,#4229ff,#9003FF,#02D6E4,#00C881);
+                background-size: 300% 300%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                animation: gradient-shift 6s ease infinite;
+              }
+              .hiw-step {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                margin-bottom: 32px;
+              }
+              .hiw-icon {
+                width: 56px;
+                height: 56px;
+                border-radius: 14px;
+                background: linear-gradient(135deg, #6e45e9, #9003FF);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              }
+              .hiw-icon svg {
+                width: 26px;
+                height: 26px;
+                color: #fff;
+              }
+              .hiw-step-title {
+                font-size: 15px;
+                font-weight: 700;
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 6px;
+              }
+              .hiw-step-desc {
+                font-size: 15px;
+                color: rgba(255,255,255,0.6);
+                line-height: 1.6;
+                margin: 0;
+              }
+              .hiw-divider {
+                width: 1px;
+                background: rgba(255,255,255,0.08);
+                margin: 0 auto;
+              }
+              @media (max-width: 767px) {
+                .hiw-divider { display: none; }
+              }
+            `}</style>
+
+            <div className="row gy-5">
+
+              {/* ── Owners ── */}
+              <div className="col-md-5">
+                <h2 className="hiw-section-title">
+                  How It Works For<br /><span>Owners</span>
+                </h2>
+                {[
+                  { title: 'List Your Property',    desc: 'Sign in, upload photos, and list your property in minutes.' },
+                  { title: 'Property Verification', desc: 'Ensure your property is verified for trust and reliability.' },
+                  { title: 'Get Verified Tenants',  desc: 'We verify tenant details using national IDs for secure renting.' },
+                  { title: 'Get Rent Easily',       desc: 'Collect rent online or offline with hassle-free payment options.' },
+                ].map((step, i) => (
+                  <div key={i} className="hiw-step">
+                    <div className="hiw-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M20 6L9 17l-5-5" />
+                        <path d="M15 6l-3 3" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="hiw-step-title">{step.title}</p>
+                      <p className="hiw-step-desc">{step.desc}</p>
                     </div>
                   </div>
-                  <div className="col-lg-7">
-                    <div className="values-box-wrap">
-                      {[
-                        { step: '01', title: 'Connect Your Data', desc: `Integrate ${product.name} with your existing systems through our zero-friction onboarding.` },
-                        { step: '02', title: 'AI Processes & Learns', desc: 'Our intelligent engine analyses your data, identifies patterns, and builds a model tailored to your needs.' },
-                        { step: '03', title: 'Get Actionable Insights', desc: 'Receive real-time recommendations, alerts, and automation that drive measurable outcomes.' },
-                        { step: '04', title: 'Iterate & Scale', desc: 'As your usage grows, the AI improves. Scale across your organisation with confidence.' },
-                      ].map((item) => (
-                        <div key={item.step} className="single-values-box">
-                          <div className="values-icon d-flex justify-content-center align-items-center"
-                            style={{ background: product.color + '22', color: product.color, fontWeight: 700, fontSize: '18px' }}>
-                            {item.step}
-                          </div>
-                          <h2 className="text_color_white h2">{item.title}</h2>
-                          <p className="text_color_light_white">{item.desc}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
+
+              {/* Divider */}
+              <div className="col-md-1 d-none d-md-flex">
+                <div className="hiw-divider" />
+              </div>
+
+              {/* ── Tenants ── */}
+              <div className="col-md-5 offset-md-1 offset-md-0">
+                <h2 className="hiw-section-title">
+                  How It Works For<br /><span>Tenants</span>
+                </h2>
+                {[
+                  { title: 'Find Property',           desc: 'Search and discover your ideal rental property easily through the app.' },
+                  { title: 'Get Verified Property',   desc: 'Browse only trusted, verified listings for a secure rental experience.' },
+                  { title: 'Show Interest in Property', desc: 'Bookmark properties you love and stay updated on their availability.' },
+                  { title: 'Get Area Manager Details', desc: 'Connect with expert area managers for guidance and offline support.' },
+                ].map((step, i) => (
+                  <div key={i} className="hiw-step">
+                    <div className="hiw-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M20 6L9 17l-5-5" />
+                        <path d="M15 6l-3 3" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="hiw-step-title">{step.title}</p>
+                      <p className="hiw-step-desc">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* ── Other products ── */}
       {others.length > 0 && (
