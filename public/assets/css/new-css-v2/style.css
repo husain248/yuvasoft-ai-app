@@ -1313,27 +1313,38 @@ body::-webkit-scrollbar-thumb {
 /*================================================
 3. About CSS
 =================================================*/
+.side-image{
+  position: relative;
+  right: -74px;
+  top: 50px;
+}
+.side-image img{
+  max-width: 280px;
+}
 .about-wrap {
   border-radius: 48px;
   padding: 60px 80px;
   gap: 15px;
+  border: 10px solid #6a48ed;
+  background-color: #191634;
 }
 .about-wrap .section-title {
   max-width: 278px;
 }
 .about-wrap .section-title .sub-title,
 .about-wrap .section-title .title {
-  color: #02021f;
+  color: #ffffff;
 }
 .about-wrap .about-info {
-  max-width: 576px;
+  max-width: 100%;
 }
 .about-wrap .about-info p {
-  color: rgba(2, 2, 31, 0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 .about-wrap .about-info .disc-2 {
   margin: 18px 0 32px;
 }
+
 @media only screen and (max-width: 1199.98px) {
   .about-wrap {
     padding: 40px;
@@ -1342,14 +1353,28 @@ body::-webkit-scrollbar-thumb {
     margin: 10px 0 12px;
   }
 }
-
+@media only screen and (max-width: 991px) {
+  .side-image{
+    top: 0;
+  }
+ .side-image img{
+   transform: rotate(90deg);
+  }
+  .ai-about{
+    flex-wrap: wrap;
+  }
+  .about-wrap{
+    padding-top: 100px;
+    margin-top: -100px;
+  }
+}
 .border-btn {
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 28px; /* 155.556% */
   letter-spacing: 0.36px;
-  color: #02021f;
+  color: #ffffff;
   display: inline-flex;
   align-items: center;
   gap: 10px;
