@@ -1,148 +1,321 @@
 'use client'
 
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
+
+const navLinks = [
+  { label: 'Home',     href: '/' },
+  { label: 'About',    href: '/about' },
+  { label: 'Services', href: '/#industries-section' },
+  { label: 'Products', href: '/#products-section' },
+  { label: 'Contact',  href: '/contact' },
+]
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  /* Sticky header shadow on scroll */
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  /* Lock body scroll when mobile menu is open */
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
+  const close = () => setMenuOpen(false)
+
   return (
-    <header>
-      {/* ── Top bar ──────────────────────────────────────────────── */}
-      <div className="header-top z-index-one">
-        <div className="container">
-          <div className="row align-items-center justify-content-between gy-4">
+    <>
+      <style>{`
+        /* ── Top bar ── */
+        .site-header-top {
+          background: linear-gradient(180deg,rgba(255,255,255,.5) -613.39%,rgba(255,255,255,.04) 283.93%,rgba(255,255,255,.5) 283.93%);
+          padding: 8px 0;
+          position: relative;
+          z-index: 9;
+        }
 
-            {/* Working hours */}
-            <div className="col-lg-5">
-              <p className="text_color_light_white d-flex align-items-center header-top-text">
-                <span className="text_color_white">
-                  <svg className="me-1" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 1C5.03702 1 1 5.03702 1 10C1 14.963 5.03702 19 10 19C14.963 19 19 14.963 19 10C19 5.03702 14.963 1 10 1ZM10 17.7442C5.7294 17.7442 2.25581 14.2706 2.25581 10C2.25581 5.7294 5.7294 2.25581 10 2.25581C14.2706 2.25581 17.7442 5.7294 17.7442 10C17.7442 14.2706 14.2706 17.7442 10 17.7442ZM12.9554 12.0679C13.2007 12.3132 13.2007 12.7109 12.9554 12.9562C12.8331 13.0784 12.6724 13.1404 12.5116 13.1404C12.3509 13.1404 12.1901 13.0793 12.0679 12.9562L9.55625 10.4446C9.43821 10.3265 9.37209 10.1666 9.37209 10.0008V5.81477C9.37209 5.46817 9.65339 5.18686 10 5.18686C10.3466 5.18686 10.6279 5.46817 10.6279 5.81477V9.74042L12.9554 12.0679Z" fill="white"/>
+        /* ── Main nav ── */
+        .site-nav {
+          width: 100%;
+          padding: 18px 0;
+          position: absolute;
+          left: 0;
+          z-index: 99;
+          transition: background 0.3s, box-shadow 0.3s;
+        }
+        .site-nav.scrolled {
+          position: fixed;
+          top: 0;
+          background: rgba(2,2,26,0.95);
+          backdrop-filter: blur(10px);
+          box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+        }
+        .nav-inner {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+        }
+
+        /* Logo */
+        .nav-logo img { max-width: 160px; display: block; }
+
+        /* Desktop links */
+        .nav-links {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        .nav-links a {
+          color: #fff;
+          font-size: 17px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: opacity 0.2s;
+          white-space: nowrap;
+        }
+        .nav-links a:hover { opacity: 0.7; }
+
+        /* Desktop CTA */
+        .nav-cta { display: flex; gap: 10px; flex-shrink: 0; }
+
+        /* Hamburger button */
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          justify-content: center;
+          gap: 5px;
+          width: 40px;
+          height: 40px;
+          background: rgba(255,255,255,0.08);
+          border: 1px solid rgba(255,255,255,0.18);
+          border-radius: 8px;
+          cursor: pointer;
+          padding: 8px;
+          flex-shrink: 0;
+          z-index: 200;
+          position: relative;
+        }
+        .hamburger span {
+          display: block;
+          height: 2px;
+          width: 100%;
+          background: #fff;
+          border-radius: 2px;
+          transition: transform 0.3s, opacity 0.3s;
+          transform-origin: center;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* Mobile drawer */
+        .mobile-drawer {
+          display: none;
+          position: fixed;
+          inset: 0;
+          z-index: 150;
+          pointer-events: none;
+        }
+        .mobile-drawer.open {
+          pointer-events: all;
+        }
+
+        /* Backdrop */
+        .drawer-backdrop {
+          position: absolute;
+          inset: 0;
+          background: rgba(0,0,0,0.6);
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+        .mobile-drawer.open .drawer-backdrop { opacity: 1; }
+
+        /* Panel */
+        .drawer-panel {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: min(320px, 85vw);
+          height: 100%;
+          background: #02021a;
+          border-left: 1px solid rgba(255,255,255,0.1);
+          transform: translateX(100%);
+          transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+          display: flex;
+          flex-direction: column;
+          padding: 0;
+          overflow-y: auto;
+        }
+        .mobile-drawer.open .drawer-panel { transform: translateX(0); }
+
+        .drawer-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px 24px;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .drawer-close {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          border: 1px solid rgba(255,255,255,0.18);
+          background: rgba(255,255,255,0.05);
+          color: #fff;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          line-height: 1;
+          flex-shrink: 0;
+        }
+
+        .drawer-nav {
+          list-style: none;
+          margin: 0;
+          padding: 16px 0;
+        }
+        .drawer-nav li a {
+          display: block;
+          padding: 14px 24px;
+          color: rgba(255,255,255,0.85);
+          font-size: 17px;
+          font-weight: 500;
+          text-decoration: none;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+          transition: color 0.2s, padding-left 0.2s;
+        }
+        .drawer-nav li a:hover {
+          color: #02D6E4;
+          padding-left: 30px;
+        }
+
+        .drawer-footer {
+          padding: 24px;
+          margin-top: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .drawer-footer .common-btn { justify-content: center; width: 100%; }
+
+        /* Responsive breakpoints */
+        @media (max-width: 991.98px) {
+          .nav-links,
+          .nav-cta { display: none; }
+          .hamburger { display: flex; }
+          .mobile-drawer { display: block; }
+        }
+        @media (min-width: 992px) {
+          .hamburger { display: none; }
+          .mobile-drawer { display: none !important; }
+        }
+      `}</style>
+
+      <header>
+        {/* ── Top bar ── */}
+        <div className="site-header-top">
+          <div className="container">
+            <div className="row align-items-center justify-content-between">
+              <div className="col-auto">
+                <p className="text_color_light_white d-flex align-items-center mb-0" style={{ fontSize: '14px', gap: '6px' }}>
+                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 1C5.037 1 1 5.037 1 10s4.037 9 9 9 9-4.037 9-9S14.963 1 10 1zm0 16.744C5.73 17.744 2.256 14.27 2.256 10S5.73 2.256 10 2.256 17.744 5.73 17.744 10 14.27 17.744 10 17.744zm2.955-5.676a.628.628 0 0 1 0 .888.624.624 0 0 1-.441.182.624.624 0 0 1-.442-.182L9.556 10.445A.629.629 0 0 1 9.372 10V5.815a.628.628 0 1 1 1.256 0v3.926l2.327 2.327z" fill="white"/>
                   </svg>
-                  Working Hours:
-                </span>
-                &nbsp;Monday - Friday, 10am - 07pm
-              </p>
-            </div>
-
-            {/* Contact + social */}
-            <div className="col-lg-7 d-none d-lg-block">
-              <div className="header-top-contact d-flex align-items-center justify-content-lg-end">
-                <a className="text_color_white header-top-address header-top-item" href="mailto:info@yuvasoftech.com">
-                  info@yuvasoftech.com
-                </a>
-                <a className="text_color_white header-top-address header-top-item" href="tel:3929299999">
-                  +91 (0) 999 3351929
-                </a>
-                <ul className="custom-ul social-list d-flex align-items-center flex-wrap header-top-item">
-                  {/* Facebook */}
-                  <li>
-                    <a href="#" aria-label="Facebook">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.9494 8.93333V15.5H8.01602V8.93333H6.16602V6.21667H8.01602V4.15C8.01602 1.8 9.41601 0.5 11.566 0.5C12.591 0.5 13.666 0.683334 13.666 0.683334V2.99167H12.4827C11.316 2.99167 10.9494 3.71667 10.9494 4.45833V6.21667H13.5577L13.141 8.93333H10.9494Z" fill="white"/>
-                      </svg>
-                    </a>
-                  </li>
-                  {/* Instagram */}
-                  <li>
-                    <a href="#" aria-label="Instagram">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16.9509 4.9078C16.8926 3.7078 16.6176 2.64114 15.7426 1.76614C14.8676 0.891143 13.8009 0.616146 12.6009 0.557813C11.3593 0.491146 7.65091 0.491146 6.41758 0.557813C5.21758 0.616146 4.15926 0.891143 3.27592 1.76614C2.39259 2.64114 2.12591 3.7078 2.06758 4.9078C2.00091 6.14947 2.00091 9.85781 2.06758 11.0995C2.12591 12.2995 2.40092 13.3661 3.27592 14.2411C4.15926 15.1161 5.21758 15.3911 6.41758 15.4495C7.65925 15.5161 11.3676 15.5161 12.6009 15.4495C13.8009 15.3911 14.8676 15.1161 15.7426 14.2411C16.6176 13.3661 16.8926 12.2995 16.9509 11.0995C17.0176 9.85781 17.0176 6.14948 16.9509 4.91614V4.9078ZM9.50092 11.9578C7.31759 11.9578 5.54259 10.1828 5.54259 7.99947C5.54259 5.81614 7.31759 4.04114 9.50092 4.04114C11.6843 4.04114 13.4593 5.81614 13.4593 7.99947C13.4593 10.1828 11.6843 11.9578 9.50092 11.9578ZM14.1009 4.24947C13.6426 4.24947 13.2676 3.87447 13.2676 3.41614C13.2676 2.95781 13.6342 2.58281 14.1009 2.58281C14.5592 2.58281 14.9342 2.95781 14.9342 3.41614C14.9342 3.87447 14.5592 4.24947 14.1009 4.24947ZM12.2093 7.99947C12.2093 9.49114 10.9926 10.7078 9.50092 10.7078C8.00926 10.7078 6.79259 9.49114 6.79259 7.99947C6.79259 6.50781 8.00926 5.29114 9.50092 5.29114C10.9926 5.29114 12.2093 6.50781 12.2093 7.99947Z" fill="white"/>
-                      </svg>
-                    </a>
-                  </li>
-                  {/* LinkedIn */}
-                  <li>
-                    <a href="#" aria-label="LinkedIn">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5.36723 15.5006H2.2089V6.02557H5.36723V15.5006ZM5.6839 2.34224C5.6839 1.34224 4.89224 0.533904 3.89224 0.50057C2.87557 0.47557 2.02557 1.27557 2.00057 2.29223C1.97557 3.3089 2.77557 4.1589 3.79223 4.1839C4.82557 4.19223 5.66724 3.37558 5.6839 2.34224ZM16.9589 9.77557C16.9589 6.82557 15.0506 5.92557 13.4256 5.92557C12.2839 5.89223 11.2089 6.45057 10.5839 7.40057V6.0339H7.5339V15.5089H10.6922V10.5922C10.6922 10.5422 10.6922 10.4922 10.6922 10.4422C10.6922 10.4339 10.6256 9.42557 11.3922 8.55057C12.4006 8.4839 13.2256 8.4839 13.8506 9.01724C13.8506 10.5172V15.5089H17.0089L16.9672 9.7839L16.9589 9.77557Z" fill="white"/>
-                      </svg>
-                    </a>
-                  </li>
-                  {/* X / Twitter */}
-                  <li>
-                    <a href="#" aria-label="X">
-                      <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.25521 0.666016H9.71192C11.0693 0.704753 12.4202 1.06771 13.5993 1.74447C15.0511 2.56283 16.2448 3.82878 16.9801 5.32422C17.5072 6.38932 17.7913 7.56869 17.8327 8.75521V9.21289C17.7959 10.4404 17.4967 11.6611 16.9388 12.7565C16.3962 13.8239 15.6247 14.7751 14.6862 15.5195C13.6979 16.3092 12.5277 16.8711 11.2904 17.139C10.7725 17.2572 10.2422 17.3105 9.71224 17.3327H9.28581C7.84147 17.292 6.40853 16.8773 5.17513 16.123C3.71257 15.2337 2.5332 13.8867 1.85254 12.3158C1.42871 11.3483 1.2041 10.2988 1.16602 9.24447V8.78483C1.20345 7.4681 1.54818 6.16016 2.18359 5.00553C2.96908 3.56999 4.18424 2.37467 5.63411 1.61556C6.74772 1.02669 7.99772 0.709635 9.25521 0.666016ZM4.70866 4.09928C5.95573 5.91406 7.2028 7.72852 8.44922 9.54329C7.20313 10.9925 5.95573 12.4408 4.70996 13.8903C4.94987 13.8916 5.1901 13.89 5.43001 13.8913C5.47689 13.8831 5.54232 13.9124 5.5752 13.8662C6.65885 12.6077 7.74154 11.3486 8.82454 10.0895C9.69662 11.3561 10.5654 12.6253 11.4385 13.8913C12.389 13.89 13.3395 13.8913 14.2897 13.8906C12.9987 12.0065 11.6992 10.1276 10.4118 8.24121C11.6038 6.86361 12.7887 5.48014 13.9772 4.09961C13.6953 4.09896 13.4137 4.09896 13.1318 4.09961C12.1022 5.30013 11.0664 6.49577 10.0394 7.69824C9.20801 6.50293 8.38932 5.29818 7.5625 4.09961C6.61133 4.09896 5.66016 4.09928 4.70866 4.09928Z" fill="white"/>
-                        <path d="M5.85742 4.73438C6.29004 4.73438 6.72266 4.7347 7.15527 4.73438C9.14811 7.58301 11.1393 10.4329 13.1315 13.2822C12.6986 13.2829 12.2656 13.2829 11.8327 13.2822C9.84147 10.4323 7.84928 7.58366 5.85742 4.73438Z" fill="white"/>
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
+                  <span className="text_color_white" style={{ fontWeight: 600 }}>Working Hours:</span>
+                  Monday – Friday, 10am – 7pm
+                </p>
+              </div>
+              <div className="col-auto d-none d-lg-block">
+                <div className="d-flex align-items-center gap-4">
+                  <a className="text_color_light_white" style={{ fontSize: '14px' }} href="mailto:info@yuvasoftech.com">info@yuvasoftech.com</a>
+                  <a className="text_color_light_white" style={{ fontSize: '14px' }} href="tel:+919993351929">+91 (0) 999 3351929</a>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
-      </div>
 
-      {/* ── Main nav ─────────────────────────────────────────────── */}
-      <div className="menu-area">
-        <div className="container">
-          <div className="row align-items-center position-relative">
+        {/* ── Main nav ── */}
+        <nav className={`site-nav${scrolled ? ' scrolled' : ''}`}>
+          <div className="container">
+            <div className="nav-inner">
 
-            {/* Logo */}
-            <div className="col-lg-3 hamburger-menu position-relative">
-              <div className="menu-logo-wrap">
-                <Link href="/">
-                  <img
-                    src="/assets/images/yuva-logo.png"
-                    alt="Yuva Logo"
-                    style={{ maxWidth: '200px' }}
-                  />
-                </Link>
+              {/* Logo */}
+              <Link href="/" className="nav-logo">
+                <img src="/assets/images/yuva-logo.png" alt="Yuvasoft" />
+              </Link>
+
+              {/* Desktop links */}
+              <ul className="nav-links">
+                {navLinks.map(({ label, href }) => (
+                  <li key={label}><Link href={href}>{label}</Link></li>
+                ))}
+              </ul>
+
+              {/* Desktop CTA */}
+              <div className="nav-cta">
+                <Link className="common-btn bg-white-style" href="/sign-up">Sign Up</Link>
+                <Link className="common-btn border-style border-style-transparent" href="/sign-in">Login</Link>
               </div>
+
+              {/* Hamburger */}
+              <button
+                className={`hamburger${menuOpen ? ' open' : ''}`}
+                onClick={() => setMenuOpen(o => !o)}
+                aria-label="Toggle menu"
+                aria-expanded={menuOpen}
+              >
+                <span /><span /><span />
+              </button>
+
+            </div>
+          </div>
+        </nav>
+
+        {/* ── Mobile drawer ── */}
+        <div className={`mobile-drawer${menuOpen ? ' open' : ''}`} aria-hidden={!menuOpen}>
+          {/* Backdrop */}
+          <div className="drawer-backdrop" onClick={close} />
+
+          {/* Panel */}
+          <div className="drawer-panel">
+            <div className="drawer-header">
+              <Link href="/" onClick={close}>
+                <img src="/assets/images/yuva-logo.png" alt="Yuvasoft" style={{ maxWidth: '130px' }} />
+              </Link>
+              <button className="drawer-close" onClick={close} aria-label="Close menu">×</button>
             </div>
 
-            {/* Nav links + CTA */}
-            <div className="col-lg-9">
-              <div className="nav-wrap d-flex justify-content-between align-items-center">
+            <ul className="drawer-nav">
+              {navLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <Link href={href} onClick={close}>{label}</Link>
+                </li>
+              ))}
+            </ul>
 
-                {/* ── Menu list ── */}
-                <div className="mainmenu text-right">
-                  <ul className="home-menu">
-
-                    {/* Home — no dropdown */}
-                    <li><Link href="/">Home</Link></li>
-
-                    {/* About — no dropdown */}
-                    <li><Link href="/about">About</Link></li>
-
-                    {/* Services — scrolls to Industries We Serve on homepage, standalone page otherwise */}
-                    <li><Link href="/#industries-section">Services</Link></li>
-
-                    {/* Products — scrolls to Products We Serve on homepage, standalone page otherwise */}
-                    <li><Link href="/#products-section">Products</Link></li>
-                    {/* <li className="has-child-menu">
-                      <a href="javascript:void(0)">Products</a>
-                      <ul>
-                        <li><Link href="/pricing">Pricing</Link></li>
-                        <li><Link href="/faq">FAQ</Link></li>
-                      </ul>
-                    </li> */}
-
-                    {/* Contact — no dropdown */}
-                    <li><Link href="/contact">Contact</Link></li>
-
-                  </ul>
-
-                  {/* Mobile CTA (shown when hamburger is open) */}
-                  <div className="menu-btn-wrap flex-shrink-0 d-lg-none pb-5 pt-3 ps-4">
-                    <Link className="common-btn bg-white-style me-2" href="/sign-up">Sign Up</Link>
-                    <Link className="common-btn border-style border-style-transparent" href="/sign-in">Login</Link>
-                  </div>
-                </div>
-
-                {/* Desktop CTA */}
-                <div className="menu-btn-wrap flex-shrink-0 d-none d-lg-block">
-                  <Link className="common-btn bg-white-style me-2" href="/sign-up">Sign Up</Link>
-                  <Link className="common-btn border-style border-style-transparent" href="/sign-in">Login</Link>
-                </div>
-
-              </div>
+            <div className="drawer-footer">
+              <Link className="common-btn bg-white-style" href="/sign-up" onClick={close}>Sign Up</Link>
+              <Link className="common-btn border-style border-style-transparent" href="/sign-in" onClick={close}>Login</Link>
             </div>
-
           </div>
         </div>
-      </div>
-    </header>
+
+      </header>
+    </>
   )
 }

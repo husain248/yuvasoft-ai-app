@@ -79,7 +79,7 @@ export default function ProductsWeServe() {
           <div className="col-lg-7">
             <div className="section-title">
               <h2 className="title text-anime gradient-title">
-                Products We've Built
+                Our Products
               </h2>
               <p className="desc text_color_light_white">
                 A look at the software products we've designed and developed

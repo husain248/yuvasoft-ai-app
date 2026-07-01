@@ -4,6 +4,7 @@ import Services        from '@/components/home/Services'
 import Industries      from '@/components/home/Industries'
 import ProductsWeServe from '@/components/home/ProductsWeServe'
 import AIAgents        from '@/components/home/AIAgents'
+import SkillsSlider    from '@/components/home/SkillsSlider'
 import Achievement     from '@/components/home/Achievement'
 import DataSection     from '@/components/home/DataSection'
 import Testimonials    from '@/components/home/Testimonials'
@@ -18,6 +19,7 @@ export default function Home() {
       <Industries />
       <ProductsWeServe />
       <AIAgents />
+      <SkillsSlider />
       <Achievement />
       <DataSection />
       <Testimonials />

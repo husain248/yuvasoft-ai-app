@@ -89,7 +89,7 @@ export default async function ProductDetailPage({ params }: Props) {
                   <h3 className="team-dev-name text_color_white">{product.name}</h3>
                   <h5 className="team-dev-title text_color_light_white">{product.tagline}</h5>
                   {product.longDescription.split('\n\n').map((para, i) => (
-                    <p key={i} className="team-dev-desc text_color_light_white mb-3">{para.trim()}</p>
+                    <p key={i} className="team-dev-desc text_color_white mb-3">{para.trim()}</p>
                   ))}
                 </div>
 
@@ -98,7 +98,7 @@ export default async function ProductDetailPage({ params }: Props) {
                   <h3 className="dev-skills-title text_color_white">Features</h3>
                   <div className="dev-overview-data mt-2">
                     {product.features.map((f, i) => (
-                      <p key={i} className="text_color_light_white mb-1">
+                      <p key={i} className="d-flex align-items-center text_color_white mb-1 gap-2">
                         <CheckIcon /> {f}
                       </p>
                     ))}
@@ -120,7 +120,7 @@ export default async function ProductDetailPage({ params }: Props) {
                           'On-Time Rent',
                           'Legal Agreements',
                         ].map((item, i) => (
-                          <p key={i} className="text_color_light_white d-flex align-items-center mb-2">
+                          <p key={i} className="text_color_white d-flex align-items-center mb-2 gap-2">
                             <CheckIcon /> <span>{item}</span>
                           </p>
                         ))}
@@ -138,7 +138,7 @@ export default async function ProductDetailPage({ params }: Props) {
                           'Quick and Easy Move-In',
                           '24/7 Support',
                         ].map((item, i) => (
-                          <p key={i} className="text_color_light_white d-flex align-items-center mb-2">
+                          <p key={i} className="text_color_white d-flex align-items-center mb-2 gap-2">
                             <CheckIcon /> <span>{item}</span>
                           </p>
                         ))}
@@ -200,7 +200,7 @@ export default async function ProductDetailPage({ params }: Props) {
               </div>
 
               {/* Quick stats card */}
-              <div className="about-wrap bg_color_light_black p-4 mt-4" style={{ borderRadius: '16px' }}>
+              {/* <div className="about-wrap bg_color_light_black p-4 mt-4" style={{ borderRadius: '16px' }}>
                 <h5 className="text_color_white mb-3">Quick Facts</h5>
                 <div className="d-flex justify-content-between mb-2">
                   <span className="text_color_light_white">Category</span>
@@ -214,7 +214,7 @@ export default async function ProductDetailPage({ params }: Props) {
                   <span className="text_color_light_white">Tech Stack</span>
                   <span className="text_color_white" style={{ fontSize: '14px' }}>{product.techStack.length} tools</span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
