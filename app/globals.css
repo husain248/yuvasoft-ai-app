@@ -70,8 +70,97 @@ li.text_color_light_white {
 }
 
 /* ──────────────────────────────────────────────────────────────────
+   Contact form — shared styles
+   .form-wrap scopes all form styles in new-css-v2/style.css.
+   .contact-form-ui is the same scope used inside the modal popup
+   so the inputs, labels, focus states and spacing all match.
+   ────────────────────────────────────────────────────────────────── */
+.contact-form-ui .common-form-box .input-group label,
+.form-wrap .common-form-box .input-group label {
+  color: #fff !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+.contact-form-ui .common-form-box .input-group input,
+.contact-form-ui .common-form-box .input-group textarea,
+.contact-form-ui .common-form-box .input-group select {
+  width: 100% !important;
+  background: #0e0f23 !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  padding: 12px 20px !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  outline: none !important;
+  transition: border-color 0.3s ease !important;
+  /* reset any browser default box-sizing differences */
+  box-sizing: border-box !important;
+}
+
+.contact-form-ui .common-form-box .input-group input::placeholder,
+.contact-form-ui .common-form-box .input-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-size: 15px !important;
+}
+
+.contact-form-ui .common-form-box .input-group input:focus,
+.contact-form-ui .common-form-box .input-group textarea:focus,
+.contact-form-ui .common-form-box .input-group select:focus {
+  border-color: var(--color-blue, #4229ff) !important;
+  outline: none !important;
+}
+
+/* select option text colour (browser-native) */
+.contact-form-ui .common-form-box .input-group select option {
+  background: #0e0f23;
+  color: #fff;
+}
+
+/* row gap between fields */
+.contact-form-ui .common-form-box .row>[class*="col-"] {
+  padding-top: 0 !important;
+}
+
+.contact-form-ui .common-form-box .input-group {
+  margin-bottom: 0;
+}
+
+/* submit button row */
+.contact-form-ui .form-info-wrap .common-btn {
+  padding: 16px 22px !important;
+  width: 100% !important;
+  justify-content: center !important;
+}
+
+/* ── also extend .form-wrap select to match (not in original CSS) ─ */
+.form-wrap .common-form-box .input-group select {
+  width: 100%;
+  background: #0e0f23;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
+  color: #fff;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-wrap .common-form-box .input-group select:focus {
+  border-color: var(--color-blue, #4229ff);
+  outline: none;
+}
+
+.form-wrap .common-form-box .input-group select option {
+  background: #0e0f23;
+  color: #fff;
+}
+
+/* ──────────────────────────────────────────────────────────────────
    Preloader
    ────────────────────────────────────────────────────────────────── */
+
 .preloader {
   transition: opacity 0.6s ease;
 }
