@@ -44,7 +44,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="service-area bg_color_black pt-120 pb-120 position-relative z-index-one overflow-hidden">
+    <section id="services-section" className="service-area bg_color_black pt-120 pb-120 position-relative z-index-one overflow-hidden">
       <div className="container">
 
         {/* ── Section heading ── */}

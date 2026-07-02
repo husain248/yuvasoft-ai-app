@@ -1,7 +1,7 @@
 import Hero            from '@/components/home/Hero'
 import About           from '@/components/home/About'
 import Services        from '@/components/home/Services'
-import Industries      from '@/components/home/Industries'
+import Portfolio       from '@/components/home/Portfolio'
 import ProductsWeServe from '@/components/home/ProductsWeServe'
 import AIAgents        from '@/components/home/AIAgents'
 import SkillsSlider    from '@/components/home/SkillsSlider'
@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <Industries />
+      <Portfolio />
       <ProductsWeServe />
       <AIAgents />
       <SkillsSlider />

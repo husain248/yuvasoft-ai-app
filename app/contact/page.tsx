@@ -85,7 +85,7 @@ export default function ContactPage() {
                   </svg>
                 </div>
               </div>
-              <div className="d-flex align-items-start">
+              <div className="d-flex align-items-start gap-5">
                 <div className="contact-card-box flex-fill">
                   <div className="contact-card-text">
                     <h3 className="contact-card-title text_color_white">India Address</h3>
