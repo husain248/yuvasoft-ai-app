@@ -28,7 +28,7 @@ export const services: Service[] = [
     subtitle: 'Making Software for Web Servers Using the Internet',
     description:
       'We design and build fast, scalable web applications from the ground up — from marketing sites to complex internal platforms — using modern frameworks and clean, maintainable architecture.',
-    image: '/assets/images/new-images-v2/hero/hero-1.png',
+    image: '/assets/images/services/web-app-development.png',
     breadcrumbDesc:
       'Custom web application development using React, Next.js, and Ruby on Rails, built for performance and long-term maintainability.',
     features: [
@@ -80,7 +80,7 @@ export const services: Service[] = [
     subtitle: 'Making Software for Android & iOS',
     description:
       'We build native and cross-platform mobile apps from the ground up using React Native and native Android development, focused on smooth performance and a polished user experience.',
-    image: '/assets/images/new-images-v2/data/data-1.svg',
+    image: '/assets/images/services/mobile-app-development.png',
     breadcrumbDesc:
       'Native Android development and React Native cross-platform apps, engineered for performance and a great user experience.',
     features: [
@@ -132,7 +132,7 @@ export const services: Service[] = [
     subtitle: 'Design That Visually Communicates and Converts',
     description:
       'Our designers do more than make things look good — we understand your business and your customers, then design interfaces that are commercial, on-brand, user-friendly, and built for how people actually use your product.',
-    image: '/assets/images/new-images-v2/data/data-2.svg',
+    image: '/assets/images/services/ui-ux-design.png',
     breadcrumbDesc:
       'Web and graphic UI/UX design that visually communicates your brand and converts visitors into customers.',
     features: [
@@ -184,7 +184,7 @@ export const services: Service[] = [
     subtitle: 'Related Software, Packaged as a Single Solution',
     description:
       'We provide related software programs and services sold as a single package — architecture, integrations, infrastructure, and ongoing technology decisions tailored to your business.',
-    image: '/assets/images/gemini-icon.svg',
+    image: '/assets/images/services/technology-solutions.png',
     breadcrumbDesc:
       'End-to-end technology solutions — architecture, integrations, and infrastructure packaged around your business needs.',
     features: [
@@ -236,7 +236,7 @@ export const services: Service[] = [
     subtitle: 'Add Intelligence to Your Existing Software',
     description:
       'We layer AI agents, chatbots, and automation into your existing products and workflows using LangChain, LangGraph, and Gemini — reducing manual work without requiring a full system rebuild.',
-    image: '/assets/images/new-images-v2/data/data-1.svg',
+    image: '/assets/images/services/ai-automation.png',
     breadcrumbDesc:
       'AI agents, chatbots, and automation layered into your existing software to cut manual work.',
     features: [
@@ -288,7 +288,7 @@ export const services: Service[] = [
     subtitle: 'Ship With Confidence, Every Time',
     description:
       'Rigorous manual and automated QA processes, plus ongoing technical support, so issues get caught before your users see them and your software stays reliable as you grow.',
-    image: '/assets/images/new-images-v2/hero/hero-1.png',
+    image: '/assets/images/services/quality-assurance.png',
     breadcrumbDesc:
       'Automated testing pipelines, rigorous QA processes, and ongoing support that keep every release reliable.',
     features: [

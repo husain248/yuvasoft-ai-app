@@ -507,6 +507,7 @@ body::-webkit-scrollbar-thumb {
   text-transform: uppercase;
   margin-bottom: 16px;
   line-height: normal;
+  color: #ffffff;
 }
 .section-title .title {
   font-size: 60px;
@@ -1381,6 +1382,9 @@ body::-webkit-scrollbar-thumb {
   border-bottom: 1px solid #02021f;
   padding-bottom: 3px;
   transition: all 0.3s;
+}
+.border-btn:hover {
+  color: #ffffff;
 }
 .border-btn:hover .icon {
   animation: 0.3s moving_side alternate;

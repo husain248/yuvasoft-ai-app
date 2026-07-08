@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 /* ── Service definitions ── */
 const services = [
@@ -9,42 +10,54 @@ const services = [
     title: 'Web Application Development',
     description:
       'We design and build fast, scalable web applications from the ground up — from marketing sites to complex internal platforms — using modern frameworks and clean, maintainable architecture.',
+    href: '/service/ai-strategy-consulting',
   },
   {
     icon: '/assets/images/s2-icon.svg',
     title: 'Mobile App Development',
     description:
       'Native and cross-platform mobile apps for iOS and Android, built for performance and a smooth user experience, backed by 15 years of in-house engineering experience.',
+    href: '/service/custom-ai-development',
   },
   {
     icon: '/assets/images/s3-icon.svg',
     title: 'UI/UX Design',
     description:
       'Interfaces designed around how your users actually think — wireframes, prototypes, and responsive design that converts visitors into customers.',
+    href: '/service/machine-learning-solutions',
   },
   {
     icon: '/assets/images/s4-icon.svg',
     title: 'Technology Solutions',
     description:
       'End-to-end technology packages covering architecture, integrations, CMS builds, and infrastructure — one partner for your entire stack.',
+    href: '/service/natural-language-processing',
   },
   {
     icon: '/assets/images/s5-icon.svg',
     title: 'AI & Automation Integration',
     description:
       'AI agents, chatbots, and workflow automation layered into your existing software using LangChain and Gemini — no full rebuild required.',
+    href: '/service/ai-analytics-insights',
   },
   {
     icon: '/assets/images/s6-icon.svg',
     title: 'Quality Assurance & Support',
     description:
       'Rigorous manual and automated QA, performance testing, and ongoing support so bugs get caught before your users ever see them.',
+    href: '/service/ai-training-support',
   },
 ]
 
+const ArrowIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+    <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
+
 export default function Services() {
   return (
-    <section id="services-section" className="service-area bg_color_black pt-120 pb-120 position-relative z-index-one overflow-hidden">
+    <section id="services-section" className="service-area bg_color_black pt-60 pb-120 position-relative z-index-one overflow-hidden">
       <div className="container">
 
         {/* ── Section heading ── */}
@@ -62,20 +75,18 @@ export default function Services() {
 
         {/* ── Service cards ── */}
         <div className="row pt-60 gy-4">
-          {services.map(({ icon, title, description }, i) => (
+          {services.map(({ icon, title, description, href }, i) => (
             <div key={i} className="col-lg-4 col-md-6">
-              <div className="service-box-wrap">
-                <div className="service-box position-relative overflow-hidden">
+              <div className="service-box-wrap h-100">
+                <div className="service-box position-relative overflow-hidden h-100 d-flex flex-column">
                   <h3>
-                    <Image
-                      src={icon}
-                      alt={title}
-                      width={44}
-                      height={44}
-                    />
+                    <Image src={icon} alt={title} width={44} height={44} />
                     {title}
                   </h3>
-                  <p>{description}</p>
+                  <p className="flex-grow-1">{description}</p>
+                  <Link className="border-btn border-btn-white mt-3 d-inline-flex align-items-center gap-2" href={href}>
+                    Learn More <ArrowIcon />
+                  </Link>
                 </div>
               </div>
             </div>

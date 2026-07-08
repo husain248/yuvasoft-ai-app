@@ -3,14 +3,19 @@
 import { useEffect, useRef } from 'react'
 
 const skills = [
+  { icon: '/assets/images/rails-icon.svg',      label: 'Ruby On Rails' },
+  { icon: '/assets/images/android-icon.svg',    label: 'Android Devlopment' },
   { icon: '/assets/images/react-icon.svg',      label: 'React.js' },
+  { icon: '/assets/images/react-icon.svg',      label: 'React Native' },
+  { icon: '/assets/images/python-icon.svg',     label: 'Node.js' },
   { icon: '/assets/images/langchain-icon.svg',  label: 'LangChain' },
   { icon: '/assets/images/python-icon.svg',     label: 'Python' },
   { icon: '/assets/images/gemini-icon.svg',     label: 'Gemini API' },
   { icon: '/assets/images/langgraph-icon.svg',  label: 'LangGraph' },
   { icon: '/assets/images/langsmith-icon.svg',  label: 'LangSmith' },
-  { icon: '/assets/images/react-icon.svg',      label: 'React Native' },
-  { icon: '/assets/images/python-icon.svg',     label: 'Node.js' },
+
+  { icon: '/assets/images/blockchain-icon.svg',     label: 'Blockchain' },
+
 ]
 
 export default function SkillsSlider() {

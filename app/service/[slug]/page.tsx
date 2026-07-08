@@ -185,41 +185,10 @@ export default async function ServiceDetailPage({ params }: Props) {
                       className="w-100"
                       src={s.image}
                       alt={s.title}
-                      style={{ borderRadius: '16px' }}
+                      style={{ borderRadius: '16px', objectFit: 'cover', minHeight: '280px' }}
                     />
-                    <div className="team-info-wrap position-absolute bottom-0 start-0 h-100 w-100 d-flex align-items-end" />
                   </div>
                 </div>
-              </div>
-
-              {/* Quick info card below image */}
-              <div
-                className="bg_color_light_black p-4 mt-4"
-                style={{ borderRadius: '16px' }}
-              >
-                <h5 className="text_color_white mb-3">Quick Overview</h5>
-                {[
-                  { label: 'Features', value: `${s.features.length} key capabilities` },
-                  { label: 'Benefits', value: `${s.keyBenefits.length} proven outcomes` },
-                  { label: 'Delivery steps', value: `${s.values.length} clear phases` },
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="d-flex justify-content-between align-items-center"
-                    style={{
-                      paddingBottom: '10px',
-                      marginBottom: '10px',
-                      borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.07)' : 'none',
-                    }}
-                  >
-                    <span className="text_color_light_white" style={{ fontSize: '14px' }}>
-                      {item.label}
-                    </span>
-                    <span className="text_color_white" style={{ fontSize: '14px', fontWeight: 500 }}>
-                      {item.value}
-                    </span>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
