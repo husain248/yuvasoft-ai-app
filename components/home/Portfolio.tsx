@@ -10,7 +10,7 @@ const categories = ['All', 'Web App', 'Mobile App', 'UI/UX', 'AI Agents']
 const portfolioItems = [
   {
     category: 'Web App',
-    image: '/assets/images/portfolio/p-8.JPG',
+    image: '/assets/images/portfolio/p-8.jpg',
     tag: 'Web App',
     title: 'Build My Ski Trip',
     time: '12 weeks',
@@ -18,7 +18,7 @@ const portfolioItems = [
   },
   {
     category: 'Web App',
-    image: '/assets/images/portfolio/p-9.JPG',
+    image: '/assets/images/portfolio/p-9.jpg',
     tag: 'Web App',
     title: 'Twitch Follower',
     time: '8 weeks',
@@ -26,7 +26,7 @@ const portfolioItems = [
   },
   {
     category: 'Web App',
-    image: '/assets/images/portfolio/p-10.JPG',
+    image: '/assets/images/portfolio/p-10.jpg',
     tag: 'Web App',
     title: 'Annexx',
     time: '8 weeks',
@@ -34,7 +34,7 @@ const portfolioItems = [
   },
   {
     category: 'Web App',
-    image: '/assets/images/portfolio/p-11.JPG',
+    image: '/assets/images/portfolio/p-11.jpg',
     tag: 'Healthcare',
     title: 'Clinic Booking System',
     time: '8 weeks',
@@ -42,7 +42,7 @@ const portfolioItems = [
   },
   {
     category: 'Web App',
-    image: '/assets/images/portfolio/p-12.JPG',
+    image: '/assets/images/portfolio/p-12.jpg',
     tag: 'Healthcare',
     title: 'Patient Management Portal',
     time: '8 weeks',
@@ -50,7 +50,7 @@ const portfolioItems = [
   },
   {
     category: 'Mobile App',
-    image: '/assets/images/portfolio/p-4.JPG',
+    image: '/assets/images/portfolio/p-4.jpg',
     tag: 'Location',
     title: 'WhereAreYou — Tracking App',
     time: 'In Development',
@@ -58,7 +58,7 @@ const portfolioItems = [
   },
   {
     category: 'Mobile App',
-    image: '/assets/images/portfolio/p-5.JPG',
+    image: '/assets/images/portfolio/p-5.jpg',
     tag: 'Location',
     title: 'WhereAreYou — iOS',
     time: 'In Development',
@@ -66,7 +66,7 @@ const portfolioItems = [
   },
   {
     category: 'Mobile App',
-    image: '/assets/images/portfolio/p-6.JPG',
+    image: '/assets/images/portfolio/p-6.jpg',
     tag: 'Location',
     title: 'WhereAreYou — Android',
     time: 'In Development',
@@ -74,7 +74,7 @@ const portfolioItems = [
   },
   {
     category: 'Mobile App',
-    image: '/assets/images/portfolio/p-7.JPG',
+    image: '/assets/images/portfolio/p-7.jpg',
     tag: 'Location',
     title: 'Field Service App',
     time: 'In Development',
