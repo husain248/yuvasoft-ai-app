@@ -57,6 +57,7 @@ export default function Header() {
           background: rgba(2,2,26,0.95);
           backdrop-filter: blur(10px);
           box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+          z-index: 999;
         }
         .nav-inner {
           display: flex;
@@ -104,7 +105,7 @@ export default function Header() {
           cursor: pointer;
           padding: 8px;
           flex-shrink: 0;
-          z-index: 200;
+          z-index: 1000;
           position: relative;
         }
         .hamburger span {
@@ -125,7 +126,7 @@ export default function Header() {
           display: none;
           position: fixed;
           inset: 0;
-          z-index: 150;
+          z-index: 9000;
           pointer-events: none;
         }
         .mobile-drawer.open {

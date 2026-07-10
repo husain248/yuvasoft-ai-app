@@ -13,7 +13,6 @@ const skills = [
   { icon: '/assets/images/gemini-icon.svg',     label: 'Gemini API' },
   { icon: '/assets/images/langgraph-icon.svg',  label: 'LangGraph' },
   { icon: '/assets/images/langsmith-icon.svg',  label: 'LangSmith' },
-
   { icon: '/assets/images/blockchain-icon.svg',     label: 'Blockchain' },
 
 ]

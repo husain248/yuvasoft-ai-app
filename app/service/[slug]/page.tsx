@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { services, getService, type Service } from '@/lib/data'
+import { ConsultationButton } from '@/components/common/ConsultationModal'
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -81,6 +82,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <p className="breadcrumb-desc text_color_light_white">
                   {s.breadcrumbDesc}
                 </p>
+                <ConsultationButton serviceTitle={s.title} />
               </div>
             </div>
           </div>

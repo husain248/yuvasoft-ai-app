@@ -4,98 +4,194 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 /* ── Categories ── */
-const categories = ['All', 'Web App', 'Mobile App', 'UI/UX', 'AI Agents']
+const categories = ['All', 'Web App', 'Mobile App', 'UI/UX', 'Blockchain & AI/ML', 'AI Agents']
 
 /* ── Portfolio cards ── */
 const portfolioItems = [
   {
     category: 'Web App',
-    image: '/assets/images/portfolio/p-8.jpg',
-    tag: 'Web App',
+    image: '/assets/images/portfolio/w-1.jpg',
+    tag: 'Ruby on Rails',
+    title: 'RoofLink',
+    href: 'https://rooflink.com/',
+    target: 'blank',
+  },
+  {
+    category: 'Web App',
+    image: '/assets/images/portfolio/w-2.jpg',
+    tag: 'Ruby on Rails',
+    title: 'Petestablished',
+    href: 'https://petstablished.com/',
+  },
+  {
+    category: 'Web App',
+    image: '/assets/images/portfolio/w-3.jpg',
+    tag: 'Ruby on Rails',
+    title: 'BestClass',
+    href: 'https://www.bestclass.us/',
+  },
+  {
+    category: 'Web App',
+    image: '/assets/images/portfolio/w-4.jpg',
+    tag: 'Ruby on Rails',
+    title: 'Heath Matthews Physio',
+    href: 'https://heathmatthewsphysio.com',
+  },
+  {
+    category: 'Web App',
+    image: '/assets/images/portfolio/w-5.jpg',
+    tag: 'React JS',
+    title: 'ClassMax',
+    href: 'https://www.theworldrelay.com/running-out-of-time/',
+  },
+  {
+    category: 'Web App',
+    image: '/assets/images/portfolio/w-6.jpg',
+    tag: 'React JS',
+    title: 'Avertro',
+    href: 'https://www.avertro.com/',
+  },
+  {
+    category: 'Web App',
+    image: '/assets/images/portfolio/w-7.jpg',
+    tag: 'React JS',
+    title: 'GivePlease',
+    href: 'https://www.givepls.com',
+  },
+  {
+    category: 'Web App',
+    image: '/assets/images/portfolio/w-8.jpg',
+    tag: 'React JS',
+    title: 'Bentley Motors',
+    href: 'https://www.bentleymotors.com/en.html',
+  },
+  {
+    category: 'Web App',
+    image: '/assets/images/portfolio/w-9.jpg',
+    tag: 'PHP / Laravel',
+    title: 'Compport',
+    href: 'https://www.compport.com/',
+  },
+  {
+    category: 'Web App',
+    image: '/assets/images/portfolio/w-10.jpg',
+    tag: 'PHP / Laravel',
+    title: 'VirtualPRO',
+    href: 'https://www.virtualpro.com/',
+  },
+  {
+    category: 'Web App',
+    image: '/assets/images/portfolio/w-11.jpg',
+    tag: 'PHP / Laravel',
     title: 'Build My Ski Trip',
-    time: '12 weeks',
-    href: '/',
+    href: 'https://www.buildmyskitrip.com/',
   },
   {
     category: 'Web App',
-    image: '/assets/images/portfolio/p-9.jpg',
-    tag: 'Web App',
-    title: 'Twitch Follower',
-    time: '8 weeks',
-    href: '/',
+    image: '/assets/images/portfolio/w-12.jpg',
+    tag: 'PHP / Laravel',
+    title: 'StaffShare365',
+    href: 'https://www.staffshare365.net/',
   },
   {
     category: 'Web App',
-    image: '/assets/images/portfolio/p-10.jpg',
-    tag: 'Web App',
-    title: 'Annexx',
-    time: '8 weeks',
-    href: '/',
-  },
-  {
-    category: 'Web App',
-    image: '/assets/images/portfolio/p-11.jpg',
-    tag: 'Healthcare',
-    title: 'Clinic Booking System',
-    time: '8 weeks',
-    href: '/',
-  },
-  {
-    category: 'Web App',
-    image: '/assets/images/portfolio/p-12.jpg',
-    tag: 'Healthcare',
-    title: 'Patient Management Portal',
-    time: '8 weeks',
-    href: '/',
+    image: '/assets/images/portfolio/w-13.jpg',
+    tag: 'PHP / Laravel',
+    title: 'Connect Firm',
+    href: 'https://connectfirm.com/',
   },
   {
     category: 'Mobile App',
-    image: '/assets/images/portfolio/p-4.jpg',
-    tag: 'Location',
-    title: 'WhereAreYou — Tracking App',
-    time: 'In Development',
-    href: '/',
+    image: '/assets/images/portfolio/a-1.jpg',
+    tag: 'Mobile App',
+    title: 'SwiftVEE',
+    href: 'https://swiftvee.com/',
   },
   {
     category: 'Mobile App',
-    image: '/assets/images/portfolio/p-5.jpg',
-    tag: 'Location',
-    title: 'WhereAreYou — iOS',
-    time: 'In Development',
-    href: '/',
+    image: '/assets/images/portfolio/a-2.jpg',
+    tag: 'Mobile App',
+    title: 'Zaxby',
+    href: 'https://play.google.com/store/apps/details?id=com.snapfinger.mobile.zaxbys&hl=en',
   },
   {
     category: 'Mobile App',
-    image: '/assets/images/portfolio/p-6.jpg',
-    tag: 'Location',
-    title: 'WhereAreYou — Android',
-    time: 'In Development',
-    href: '/',
+    image: '/assets/images/portfolio/a-3.jpg',
+    tag: 'Mobile App',
+    title: 'DIFX Exchange',
+    href: 'https://play.google.com/store/apps/details?id=app.difx.exchange',
   },
   {
     category: 'Mobile App',
-    image: '/assets/images/portfolio/p-7.jpg',
-    tag: 'Location',
-    title: 'Field Service App',
-    time: 'In Development',
-    href: '/',
+    image: '/assets/images/portfolio/a-4.jpg',
+    tag: 'Mobile App',
+    title: 'Sarwa',
+    href: 'https://play.google.com/store/apps/details?id=com.sarwa&hl=en_IN&gl=US',
+  },
+  {
+    category: 'Mobile App',
+    image: '/assets/images/portfolio/a-5.jpg',
+    tag: 'Mobile App',
+    title: 'Pi Pay',
+    href: 'https://play.google.com/store/apps/details?id=com.pipay.app.android',
   },
   {
     category: 'UI/UX',
-    image: '/assets/images/new-images-v2/resources/resources-3.png',
-    tag: 'Productivity',
-    title: 'Lifenotes — Notes Platform',
-    time: 'In Development',
-    href: '/',
-  },
-  {
-    category: 'UI/UX',
-    image: '/assets/images/new-images-v2/resources/resources-4.png',
+    image: '/assets/images/portfolio/ux-1.jpg',
     tag: 'Design',
-    title: 'NetAssist — Dashboard Design',
-    time: '5 weeks',
+    title: 'Rest Less',
+    href: 'https://restless.co.uk/leisure-and-lifestyle/film-and-tv/?ref=onthebox',
+  },
+  {
+    category: 'UI/UX',
+    image: '/assets/images/portfolio/ux-2.jpg',
+    tag: 'Design',
+    title: 'Colina Insurance',
+    href: 'https://www.colina.com/',
+  },
+  {
+    category: 'UI/UX',
+    image: '/assets/images/portfolio/ux-3.jpg',
+    tag: 'Design',
+    title: 'Paleonola',
+    href: 'https://paleonola.com/',
+  },
+  {
+    category: 'UI/UX',
+    image: '/assets/images/portfolio/ux-4.jpg',
+    tag: 'Design',
+    title: 'Voluspa',
+    href: 'https://voluspa.com/',
+  },
+  {
+    category: 'Blockchain & AI/ML',
+    image: '/assets/images/portfolio/ai-1.jpg',
+    tag: 'Blockchain & AI/ML',
+    title: 'Multi-Modal AI Agent',
+    href: 'https://www.omakase.ai/',
+  },
+  {
+    category: 'Blockchain & AI/ML',
+    image: '/assets/images/portfolio/ai-2.jpg',
+    tag: 'Blockchain & AI/ML',
+    title: 'ZEALS',
+    href: 'https://zeals.ai/en/',
+  },
+  {
+    category: 'Blockchain & AI/ML',
+    image: '/assets/images/portfolio/ai-3.jpg',
+    tag: 'Design',
+    title: 'Crobo.money',
+    href: 'https://www.crobo.money/',
+  },
+  {
+    category: 'Blockchain & AI/ML',
+    image: '/assets/images/new-images-v2/resources/resources-4.png',
+    tag: 'Blockchain & AI/ML',
+    title: 'AI Multi-Camera Monitoring',
     href: '/',
   },
+  
 ]
 
 /* ── AI Agents tab cards ── */
@@ -342,18 +438,11 @@ export default function Portfolio() {
               <div className="portfolio-card-body">
                 <div className="portfolio-card-meta">
                   <span className="portfolio-card-tag">{item.tag}</span>
-                  <span className="portfolio-card-heart"><HeartIcon /></span>
-                </div>
-                <p className="portfolio-card-title">{item.title}</p>
-                <div className="portfolio-card-footer">
-                  <div>
-                    <p className="portfolio-card-time-label">Type</p>
-                    <p className="portfolio-card-time-val">{item.time}</p>
-                  </div>
-                  <Link href={item.href} className="portfolio-card-cta">
+                  <Link href={item.href} className="portfolio-card-cta" target='_blank'>
                     View Project <ArrowIcon />
                   </Link>
                 </div>
+                <p className="portfolio-card-title">{item.title}</p>
               </div>
             </div>
           ))}
