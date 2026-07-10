@@ -8,13 +8,14 @@ export default function DataSection() {
           <div className="col-lg-6 col-xl-5">
             <div className="data-img-wrap position-relative z-index-one">
               <img
-                className="w-100"
-                src="/assets/images/new-images-v2/data/data-1.svg"
+                className="w-100 rounded-lg"
+                src="/assets/images/why-choose-graphic.png"
                 alt="Data Visualization"
+                
               />
               <img
                 className="data-img-2 d-none d-lg-block position-absolute"
-                src="/assets/images/new-images-v2/data/data-2.svg"
+                src="/assets/images/data-2.svg"
                 alt=""
               />
               <img
@@ -26,16 +27,12 @@ export default function DataSection() {
           </div>
           <div className="col-lg-6 col-xl-6">
             <div className="data-info">
-              <span className="text_color_light_white">AI-Powered Intelligence</span>
+              <span className="text_color_light_white">WHY CHOOSE US?</span>
               <h2 className="text_color_white text-anim">
-                Real-Time AI Processing for Intelligent Business Decisions
+                Why Yuvasoft?
               </h2>
-              <p className="text_color_light_white">
-                In the realm of cutting-edge AI solutions, our technology
-                takes center stage, offering real-time intelligence that
-                propels business transformation to unparalleled heights.
-              </p>
-              <ul className="listing custom-ul d-flex flex-column">
+              
+              <ul className="listing custom-ul d-flex flex-column why-list">
                 <li>
                   <svg
                     width="24"
@@ -50,7 +47,7 @@ export default function DataSection() {
                       fillOpacity="0.7"
                     />
                   </svg>
-                  Advanced AI algorithms for intelligent data processing.
+                  We are a group of problem solvers and code ninjas that believe in building software that has real purpose. By combining talent, expertise, and hard work, we build custom software.
                 </li>
                 <li>
                   <svg
@@ -66,7 +63,7 @@ export default function DataSection() {
                       fillOpacity="0.7"
                     />
                   </svg>
-                  Real-time analytics and predictive insights.
+                  We emphasizes the importance of being reliable, efficient, and respectful of deadlines.
                 </li>
                 <li>
                   <svg
@@ -82,8 +79,9 @@ export default function DataSection() {
                       fillOpacity="0.7"
                     />
                   </svg>
-                  Seamless integration with existing business systems.
+                  Our execution of tasks, projects, or services meet or exceed established standards, demonstrating a high level of excellence, accuracy, and proficiency.
                 </li>
+                
               </ul>
             </div>
           </div>
