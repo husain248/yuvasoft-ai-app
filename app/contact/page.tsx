@@ -77,7 +77,7 @@ export default function ContactPage() {
 
           {/* ── Address / phone / email cards ── */}
           <div className="row gy-4 pt-120">
-            <div className="col-lg-6 col-md-6 col-sm-12">
+            <div className="col-lg-12 col-md-6 col-sm-12 mb-10">
               <div className="contact-card-box mb-10 align-items-start">
                 <div className="contact-card-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -104,6 +104,14 @@ export default function ContactPage() {
                     </p>
                   </div>
                 </div>
+                <div className="contact-card-box flex-fill">
+                  <div className="contact-card-text">
+                    <h3 className="contact-card-title text_color_white">US Address</h3>
+                    <p className="contact-card-desc text_color_light_white">
+                      Evanston, WY 82930
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -121,7 +129,8 @@ export default function ContactPage() {
                     <h3 className="contact-card-title text_color_white">Contact Info</h3>
                     <p className="contact-card-desc text_color_light_white">
                       <a href="tel:+919993351929">+91 (0) 999 335 1929</a><br />
-                      <a href="tel:+12503202415">+1 (250) 320-2415</a>
+                      <a href="tel:+12503202415">+1 (250) 320-2415</a><br />
+                      <a href='tel:+1-662-497-4793'>+1-662-497-4793</a>
                     </p>
                   </div>
                 </div>

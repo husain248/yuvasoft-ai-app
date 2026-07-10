@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 const testimonials = [
   {
-    name: ' Almaz Bikchurin,',
+    name: ' Almaz Bikchurin',
     role: 'CEO & Founder, Tatar on Rails',
     image: '/assets/images/testimonial/author-7.png',
     text: 'Using their good people and project management skills, Yuvasoft Solutions Private Limited always delivers work on time. Their adaptability and work culture have helped them mesh well with the internal team. They continue to communicate well, resulting in a strong, long-term partnership.',
@@ -22,16 +22,22 @@ const testimonials = [
     text: 'Yuvasoft Solutions Private Limited was able to complete the project in a timely manner. Project management was effective. They were very flexible and easy to work with.',
   },
   {
-    name: 'Head of Delivery, ',
+    name: 'Head of Delivery',
     role: 'Software Company',
     image: '/assets/images/testimonial/author-7.png',
     text: 'Yuvasoft Solutions Private Limited followed the clients requirements for the app and delivered on time. The project ran hassle-free, there were no recorded issues, and the team stayed on track and was very close to their estimates. Customers can expect a responsive vendor.',
   },
   {
-    name: 'Courtney Henry',
-    role: 'Nursing Assistant',
+    name: 'CEO',
+    role: 'Full-Service Web & Mobile Development Company',
     image: '/assets/images/testimonial/author-6.png',
-    text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using is that it has a more or less normal distribution of letters as opposed to using Content here content here making it English.',
+    text: 'Yuvasoft Solutions Private Limited follows the clients timelines to ensure they meet deadlines. Their team communicates well; communication is managed by the clients project manager.',
+  },
+  {
+    name: 'Ollie Lawson',
+    role: 'Managing Director, Vivify Studios',
+    image: '/assets/images/testimonial/author-6.png',
+    text: 'Yuvasoft Solutions Private Limited provides quality work with excellent communication. They were able to meet tight deadlines and pass all QC tests. They used Skype, Jira, and held regular calls and meetings.',
   },
 ]
 

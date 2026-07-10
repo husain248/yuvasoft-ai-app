@@ -20,32 +20,72 @@ const ArrowSvg = () => (
 )
 
 const team = [
-  { name: 'Arjun Sharma', role: 'CEO & Co-Founder', img: '/assets/images/new-images-v2/team/team-1.png' },
-  { name: 'Priya Mehta', role: 'Managing Director', img: '/assets/images/new-images-v2/team/team-2.png' },
-  { name: 'Rahul Verma', role: 'Product Manager', img: '/assets/images/new-images-v2/team/team-3.png' },
-  { name: 'Sneha Patel', role: 'Digital Marketer', img: '/assets/images/new-images-v2/team/team-4.png' },
-  { name: 'Vikram Rao', role: 'Software Engineer', img: '/assets/images/new-images-v2/team/team-5.png' },
-  { name: 'Anita Singh', role: 'Front End Developer', img: '/assets/images/new-images-v2/team/team-6.png' },
+  {
+    name: 'Hitesh Kanwar',
+    role: 'Founder / CEO',
+    img: '/assets/images/team/hitesh-pic.jpg',
+    slug: 'hitesh-kanwar',
+    linkedin: 'https://www.linkedin.com/in/hiteshkanwar786/',
+  },
+  {
+    name: 'Sandeep Singh Sisodiya',
+    role: 'Product Manager / Director',
+    img: '/assets/images/team/sandeep-pic.jpg',
+    slug: 'sandeep-singh-sisodiya',
+    linkedin: 'https://www.linkedin.com/in/sandy1987/',
+  },
+  {
+    name: 'Satish Mishra',
+    role: 'Founder / CTO',
+    img: '/assets/images/team/satish-pic.jpg',
+    slug: 'satish-mishra',
+    linkedin: 'https://www.linkedin.com/in/satish-mishra-40890098/',
+  },
+  {
+    name: 'Ranveer Singh Rawat',
+    role: 'Founder / COO',
+    img: '/assets/images/team/ranveer-pic.jpg',
+    slug: 'ranveer-singh-rawat',
+    linkedin: 'https://www.linkedin.com/in/ranveer-rawat-bb386123/',
+  },
 ]
 
 const testimonials = [
   {
-    name: 'Adam Zampol',
-    role: 'CEO Kingoston Corps, USA',
+    name: 'Almaz Bikchurin',
+    role: 'CEO & Founder, Tatar on Rails',
     stars: 5,
-    text: '"Incredible innovation! This AI company has not only exceeded my expectations but has redefined what\'s possible in the tech world. Their cutting-edge solutions seamlessly integrate into our workflows, bringing efficiency intelligence to the forefront. Truly a game-changer!"'
+    text: '"Using their good people and project management skills, Yuvasoft Solutions Private Limited always delivers work on time. Their adaptability and work culture have helped them mesh well with the internal team. They continue to communicate well, resulting in a strong, long-term partnership."'
   },
   {
-    name: 'Sarah Leon',
-    role: 'Business Owner, Dubai',
+    name: 'Anonymous',
+    role: 'CTO, Software Development & Consulting Company',
     stars: 4.5,
-    text: '"Choosing this AI company was the best decision for my business. Their customized solutions have streamlined our processes, providing insights that were previously unimaginable. The impact on productivity and decision-making has been remarkable. Highly recommended!"'
+    text: '"Stakeholders have been impressed with the quality of the work so far. Yuvasoft Solutions Private Limited has delivered everything on time and in budget. Their team communicates directly and effectively. As a result, the project has run smoothly so far."'
   },
   {
-    name: 'Michael Hamilton',
-    role: 'CEO, Piqo Tech, Indonesia',
+    name: 'Samuel Adesoga',
+    role: 'Consultant, IT Consulting Firm',
     stars: 4.5,
-    text: '"From an IT perspective, seamless implementation and minimal troubleshooting are signs of a quality product. This AI company not only delivers cutting-edge solutions but also ensures that end-users experience a level of satisfaction that is second to none."'
+    text: '"Yuvasoft Solutions Private Limited was able to complete the project in a timely manner. Project management was effective. They were very flexible and easy to work with."'
+  },
+  {
+    name: 'Head of Delivery',
+    role: 'Software Company',
+    stars: 4.5,
+    text: 'Yuvasoft Solutions Private Limited followed the clients requirements for the app and delivered on time. The project ran hassle-free, there were no recorded issues, and the team stayed on track and was very close to their estimates. Customers can expect a responsive vendor.',
+  },
+  {
+    name: 'CEO',
+    role: 'Full-Service Web & Mobile Development Company',
+    stars: 4.5,
+    text: 'Yuvasoft Solutions Private Limited follows the clients timelines to ensure they meet deadlines. Their team communicates well; communication is managed by the clients project manager.',
+  },
+  {
+    name: 'Ollie Lawson',
+    role: 'Managing Director, Vivify Studios',
+    stars: 4.5,
+    text: 'Yuvasoft Solutions Private Limited provides quality work with excellent communication. They were able to meet tight deadlines and pass all QC tests. They used Skype, Jira, and held regular calls and meetings.',
   },
 ]
 
@@ -141,7 +181,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── About SaasLyn — stats + quote ────────────────────────── */}
+      
       <section className="about-ai-area pt-120 pb-120 bg_color_deep_blue">
         <div className="container">
           <div className="row align-items-center justify-content-between gy-4">
@@ -256,10 +296,18 @@ export default function AboutPage() {
                       <div className="team-info-wrap position-absolute bottom-0 start-0 h-100 w-100 d-flex align-items-end">
                         <div className="d-flex w-100 justify-content-between align-items-center">
                           <div className="team-info text-start">
-                            <h2 className="h2 text_color_white">{member.name}</h2>
-                            <p className="text_color_light_white">{member.role} at Yuvasoft</p>
+                            <Link href={`/team/${member.slug}`} className="text_color_white">
+                              <h2 className="h2 text_color_white">{member.name}</h2>
+                            </Link>
+                            <p className="text_color_light_white">{member.role}</p>
                           </div>
-                          <a href="#" className="team-social d-flex align-items-center justify-content-center">
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="team-social d-flex align-items-center justify-content-center"
+                            aria-label={`${member.name} on LinkedIn`}
+                          >
                             <LinkedInIcon />
                           </a>
                         </div>
