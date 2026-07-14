@@ -172,7 +172,7 @@ export default function ContactPage() {
               <div key={step.num} className="col-lg-3 col-md-6">
                 <div className="service-box-wrap h-100">
                   <div className="service-box position-relative overflow-hidden h-100">
-                    <span style={{ fontSize: '48px', fontWeight: 700, color: 'rgba(255,255,255,0.08)', display: 'block', marginBottom: '8px', lineHeight: 1 }}>
+                    <span style={{ fontSize: '48px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', display: 'block', marginBottom: '8px', lineHeight: 1 }}>
                       {step.num}
                     </span>
                     <h3 style={{ fontSize: '18px' }}>{step.title}</h3>
