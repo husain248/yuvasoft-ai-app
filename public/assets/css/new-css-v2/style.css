@@ -4671,7 +4671,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 20px;
 }
 .team-box-wrap .team-box .team-img {
-  padding-top: 40px;
+  padding-top: 0;
 }
 @media only screen and (max-width: 1199.98px) {
   .team-box-wrap .team-box .team-img {
@@ -4681,10 +4681,11 @@ body::-webkit-scrollbar-thumb {
 .team-box-wrap .team-box .team-img img {
   transition-duration: 0.8s;
   transition: all 0.3s linear;
+   border-radius: 20px;
 }
 .team-box-wrap .team-box .team-img .team-info-wrap {
   background: linear-gradient(180deg, rgba(0, 0, 29, 0) 33.13%, var(--color-deep-blue) 91.05%);
-  padding: 40px;
+  padding: 20px;
 }
 @media only screen and (max-width: 1199.98px) {
   .team-box-wrap .team-box .team-img .team-info-wrap {
