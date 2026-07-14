@@ -288,7 +288,7 @@ export default function AboutPage() {
           </div>
           <div className="row pt-60 gy-4">
             {team.map((member, i) => (
-              <div key={i} className="col-lg-4 col-md-6">
+              <div key={i} className="col-lg-3 col-md-4">
                 <div className="team-box-wrap">
                   <div className="team-box">
                     <div className="team-img overflow-hidden position-relative text-center">

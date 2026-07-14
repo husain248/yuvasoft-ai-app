@@ -70,7 +70,7 @@ export default function AIAgents() {
                     <p>{agent.description}</p>
                   </div>
                   <img
-                    src="/assets/images/features/features-item-shape.png"
+                    src="/assets/images/features-item-shape.png"
                     alt="features-item-shape"
                     className="item-shape"
                   />

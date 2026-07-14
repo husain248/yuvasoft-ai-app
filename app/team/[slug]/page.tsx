@@ -6,63 +6,59 @@ import Link from 'next/link'
 export const teamMembers = [
   {
     name: 'Hitesh Kanwar',
-    role: 'Founder / CEO',
+    post: 'Founder / CEO',
     img: '/assets/images/team/hitesh-pic.jpg',
     slug: 'hitesh-kanwar',
-    linkedin: 'https://www.linkedin.com/in/hitesh-kanwar',
-    bio: [
-      'Hitesh Kanwar is the Founder and CEO of Yuvasoft, bringing over 15 years of experience in software engineering and technology leadership.',
-      'He founded Yuvasoft with a vision to build world-class software products and deliver AI-powered solutions that help businesses move faster and scale smarter.',
-      'Hitesh leads the company\'s strategic direction, product vision, and client partnerships, with a hands-on approach to engineering and delivery excellence.',
+    linkedin: 'https://www.linkedin.com/in/hiteshkanwar786/',
+    bio: ['Our clients interests are ours as well We strive to deliver valuable products and services for both our clients and their customers We think that great things can only be achieve through a sustainable, strong and professional team. We love challenges and we are keen learners. We measure our success by the success of those we serve. Thats not some tagline, Its a tenet that informs everything we believe and do. As CEO of Yuvasoft, Mr. Hitesh Gurjar is responsible for technical leadership and innovation, further developing the companys technical community, and aligning its software strategy, architecture and partner relationships to deliver customer value. He has a passion for innovation and development. He has extensive experience leading the development of cutting-edge products and technologies.',
     ],
     skills: ['Product Strategy', 'Software Architecture', 'AI & Automation', 'Team Leadership', 'Client Relations'],
-    location: 'Indore, India',
+    experience: 'Over 12+ years experience',
     email: 'info@yuvasoftech.com',
+    qualification: 'Bachelor of Engineering'
   },
   {
     name: 'Sandeep Singh Sisodiya',
-    role: 'Product Manager / Director',
+    post: 'Product Manager / Director',
     img: '/assets/images/team/sandeep-pic.jpg',
     slug: 'sandeep-singh-sisodiya',
-    linkedin: 'https://www.linkedin.com/in/sandeep-singh-sisodiya',
+    linkedin: 'https://www.linkedin.com/in/sandy1987/',
     bio: [
-      'Sandeep Singh Sisodiya is the Product Manager and Director at Yuvasoft, driving product roadmap, delivery processes, and cross-functional team alignment.',
-      'With deep expertise in agile delivery and product thinking, Sandeep ensures that every project ships on time, on scope, and with measurable business impact.',
-      'He bridges the gap between client requirements and engineering execution, keeping Yuvasoft\'s delivery consistently high quality.',
+      'We work with passion. We are enthusiastic about the work we do and the products we build.I am proud of our company and the people that have brought us to where we are today, and I am excited about where we are going tomorrow. As Managing Director of Yuvasoft Mr. Sandeep Sisodiya is the visionary of the company when it comes to the technical aspect of Yuvasofts processes. He set new goals and challenges in the coming years, Yuvaosft will remain to be committed to the core values of quality, customer delight, integrity, agility and efficiency - the same core values that have brought Yuvasoft to where we are today, a world class IT service and solutions company offering IT service and solutions to key markets in Asia Americas and Australia.',
     ],
     skills: ['Product Management', 'Agile Delivery', 'Stakeholder Management', 'Roadmap Planning', 'UX Strategy'],
-    location: 'Indore, India',
+    experience: 'Over 12+ years experience',
     email: 'info@yuvasoftech.com',
+    qualification: 'Bachelor of Engineering'
   },
   {
     name: 'Satish Mishra',
-    role: 'Founder / CTO',
+    post: 'Founder / CTO',
     img: '/assets/images/team/satish-pic.jpg',
     slug: 'satish-mishra',
-    linkedin: 'https://www.linkedin.com/in/satish-mishra',
+    linkedin: 'https://www.linkedin.com/in/satish-mishra-40890098/',
     bio: [
-      'Satish Mishra is a Co-Founder and CTO of Yuvasoft, responsible for the company\'s technical architecture, engineering standards, and technology innovation.',
-      'He brings extensive experience across full-stack development, cloud infrastructure, and AI integration, having led engineering teams across multiple product verticals.',
-      'Satish ensures Yuvasoft\'s codebases are clean, scalable, and built to last — setting the technical bar for every project the team delivers.',
+      'Satish Mishra is a Co-Founder of Yuvatech Solutions USA LLC, I am committed to driving the global expansion of tech services, leveraging a proven foundation established by Yuvatechsoft Solutions in 2013. We have delivered over 140 projects across industries, including U.S. defense and multinational corporations. Our expertise spans web and mobile applications, backend technologies like Ruby on Rails, Node.js, and Python with Django, and frontend frameworks such as Angular, React, and Next.js.  ',
+      'Additionally, our latest focus is on developing advanced AI-driven systems with tools like LangChain and LangGraph to provide innovative solutions in a rapidly evolving technological landscape. My mission is to empower businesses with cutting-edge technology tailored to their needs.',
     ],
     skills: ['System Architecture', 'Full-Stack Engineering', 'Cloud Infrastructure', 'AI Integration', 'Engineering Leadership'],
-    location: 'Indore, India',
+    Experience: 'Over 8+ years experience',
     email: 'info@yuvasoftech.com',
+    qualification: 'Bachelor of Engineering'
   },
   {
     name: 'Ranveer Singh Rawat',
-    role: 'Founder / COO',
+    post: 'Founder / CTO',
     img: '/assets/images/team/ranveer-pic.jpg',
     slug: 'ranveer-singh-rawat',
-    linkedin: 'https://www.linkedin.com/in/ranveer-singh-rawat',
+    linkedin: 'https://www.linkedin.com/in/ranveer-rawat-bb386123/',
     bio: [
-      'Ranveer Singh Rawat is a Co-Founder and COO of Yuvasoft, overseeing operations, business development, and the company\'s growth strategy.',
-      'He plays a key role in building client relationships, managing delivery pipelines, and ensuring Yuvasoft operates with the efficiency and quality standards its clients expect.',
-      'Ranveer\'s operational focus keeps the team aligned, projects on track, and clients informed at every stage.',
+      'Accomplished, results-driven IT and software developer with a legacy of delivering complex initiatives successfully with teams. Proven ability to own, build, lead, and develop technical teams in the execution of the strategic vision and product roadmap. Able to communicate, prioritize and implement technology initiatives while ensuring frugal budgetary and governance controls. Value team relationships and leading with an analytical mindset.',
     ],
     skills: ['Operations Management', 'Business Development', 'Client Success', 'Growth Strategy', 'Project Delivery'],
-    location: 'Indore, India',
+    experience: 'Over 10+ years experience',
     email: 'info@yuvasoftech.com',
+    qualification: 'Bachelor of Engineering'
   },
 ]
 
@@ -152,7 +148,7 @@ export default async function TeamMemberPage({ params }: Props) {
                 <div className="team-dev-head">
                   <h3 className="team-dev-name text_color_white">{member.name}</h3>
                   <h5 className="team-dev-title text_color_light_white" style={{ marginTop: '8px', marginBottom: '20px' }}>
-                    {member.role}
+                    {member.post}
                   </h5>
                   {member.bio.map((para, i) => (
                     <p key={i} className="team-dev-desc text_color_light_white mb-3">{para}</p>
@@ -177,7 +173,7 @@ export default async function TeamMemberPage({ params }: Props) {
                   <div className="dev-skills-tags mt-3">
                     <ul className="custom-ul tag-list d-flex flex-wrap align-items-center">
                       <li><a href={`mailto:${member.email}`}>{member.email}</a></li>
-                      <li><a href="#">{member.location}</a></li>
+                      
                     </ul>
                   </div>
                 </div>
@@ -209,7 +205,7 @@ export default async function TeamMemberPage({ params }: Props) {
                       className="w-100"
                       src={member.img}
                       alt={member.name}
-                      style={{ borderRadius: '16px', objectFit: 'cover' }}
+                      style={{ borderRadius: '20px', objectFit: 'cover' }}
                     />
                   </div>
                 </div>
@@ -219,9 +215,9 @@ export default async function TeamMemberPage({ params }: Props) {
               <div className="bg_color_light_black p-4 mt-4" style={{ borderRadius: '16px' }}>
                 <h5 className="text_color_white mb-3">Quick Info</h5>
                 {[
-                  { label: 'Role',     value: member.role },
-                  { label: 'Location', value: member.location },
-                  { label: 'Skills',   value: `${member.skills.length} areas` },
+                  { label: 'Post',     value: member.post },
+                  { label: 'Experience', value: member.experience },
+                  { label: 'Qualification',   value: member.qualification  },
                 ].map((item, i) => (
                   <div
                     key={i}
