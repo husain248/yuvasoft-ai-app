@@ -42,7 +42,7 @@ export const teamMembers = [
       'Additionally, our latest focus is on developing advanced AI-driven systems with tools like LangChain and LangGraph to provide innovative solutions in a rapidly evolving technological landscape. My mission is to empower businesses with cutting-edge technology tailored to their needs.',
     ],
     skills: ['System Architecture', 'Full-Stack Engineering', 'Cloud Infrastructure', 'AI Integration', 'Engineering Leadership'],
-    Experience: 'Over 8+ years experience',
+    experience: 'Over 8+ years experience',
     email: 'info@yuvasoftech.com',
     qualification: 'Bachelor of Engineering'
   },

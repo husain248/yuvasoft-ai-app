@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import StatsCounter from '@/components/common/StatsCounter'
+import AboutImageSlider from '@/components/about/AboutImageSlider'
 
 export const metadata: Metadata = {
   title: 'About Us — Yuvasoft AI',
@@ -147,12 +148,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <img
-                className="w-100"
-                src="/assets/images/new-images-v2/about-cta-two.png"
-                alt="About Yuvasoft"
-                style={{ borderRadius: '20px' }}
-              />
+              <AboutImageSlider />
             </div>
           </div>
 
