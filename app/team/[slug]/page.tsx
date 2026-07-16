@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const member = getMember(slug)
   if (!member) return {}
   return {
-    title: `${member.name} — ${member.role} | Yuvasoft`,
+    title: `${member.name} — ${member.post} | Yuvasoft`,
     description: member.bio[0],
   }
 }
@@ -125,7 +125,7 @@ export default async function TeamMemberPage({ params }: Props) {
                   <span className="text_color_light_white">{member.name}</span>
                 </p>
                 <h1 className="text_color_white">{member.name}</h1>
-                <p className="breadcrumb-desc text_color_light_white">{member.role} at Yuvasoft</p>
+                <p className="breadcrumb-desc text_color_light_white">{member.post} at Yuvasoft</p>
               </div>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default async function TeamMemberPage({ params }: Props) {
                               <Link href={`/team/${m.slug}`}>
                                 <h2 className="h2 text_color_white">{m.name}</h2>
                               </Link>
-                              <p className="text_color_light_white">{m.role}</p>
+                              <p className="text_color_light_white">{m.post}</p>
                             </div>
                             <a
                               href={m.linkedin}
